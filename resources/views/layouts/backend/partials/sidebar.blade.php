@@ -15,7 +15,7 @@
     <div class="sidebar-heading">
         Features
     </div>
-    <li class="nav-item">
+    <li class="nav-item {{(Request::is('category*'))?'active':''}}">
         <a class="nav-link" href="{{route('category.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
             <span>Category</span>
