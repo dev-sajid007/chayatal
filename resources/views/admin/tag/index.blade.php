@@ -1,4 +1,7 @@
 @extends('layouts.backend.app')
+@push('css')
+    <link href="{{asset('backend/admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+@endpush
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h3 class="mb-0 text-gray-800">Tag</h3>
@@ -47,3 +50,15 @@
 </div>
 <!--Row-->
 @endsection
+@push('js')
+    <!-- Page level plugins -->
+    <script src="{{asset('backend/admin/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('backend/admin/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <!-- Page level custom scripts -->
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable(); // ID From dataTable
+            $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+        });
+    </script>
+@endpush

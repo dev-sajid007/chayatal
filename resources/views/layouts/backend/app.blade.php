@@ -88,6 +88,8 @@
     </a>
 
     <script src="{{ asset('backend/admin/vendor/jquery/jquery.min.js') }}"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
+
     <script src="{{ asset('backend/admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('backend/admin/js/ruang-admin.min.js') }}"></script>
