@@ -1,0 +1,49 @@
+@extends('layouts.backend.app')
+@section('content')
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h3 class="mb-0 text-gray-800">Tag</h3>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./">Home</a></li>
+        <li class="breadcrumb-item">Tag</li>
+        <li class="breadcrumb-item active" aria-current="page">Index</li>
+    </ol>
+</div>
+<!-- Row -->
+<div class="row">
+    <!-- Datatables -->
+    <div class="col-lg-12">
+        <div class="card mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Tag List</h6>
+                <a href="{{route('tag.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+            </div>
+            <div class="table-responsive p-3">
+                <table class="table align-items-center table-flush" id="dataTable">
+                    <thead >
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($tags as $tag)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$tag->name}}</td>
+                          
+                                <td>
+                                    <a href="{{route('tag.edit',$tag->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a id="delete" href="{{route('tag.delete',$tag->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></a>
+                                </td>
+                                
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Row-->
+@endsection

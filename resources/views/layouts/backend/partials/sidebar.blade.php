@@ -7,7 +7,7 @@
     </a>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('admin.dashboard')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -21,10 +21,10 @@
             <span>Category</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="">
+    <li class="nav-item {{(Request::is('tag*'))?'active':''}}">
+        <a class="nav-link" href="{{route('tag.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
-            <span>Role</span>
+            <span>Tag</span>
         </a>
     </li>
     <li class="nav-item">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +47,17 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::get('/edit/{id}',[CategoryController::class, 'edit'])->name('edit');
         Route::post('/update/{id}',[CategoryController::class, 'update'])->name('update');
         Route::get('/delete/{id}',[CategoryController::class, 'delete'])->name('delete');
+
+    });
+
+    Route::group(['as'=>'tag.','prefix'=>'tag'],function(){
+
+        Route::get('/',[TagController::class, 'index'])->name('index');
+        Route::get('/create',[TagController::class, 'create'])->name('create');
+        Route::post('/store',[TagController::class, 'store'])->name('store');
+        Route::get('/edit/{id}',[TagController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}',[TagController::class, 'update'])->name('update');
+        Route::get('/delete/{id}',[TagController::class, 'delete'])->name('delete');
 
     });
     
