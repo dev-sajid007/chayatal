@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->integer('parent_id')->nullable();
+            $table->string('title')->nullable();
+            $table->integer('order')->nullable();
+            $table->string('url')->nullable();
+            $table->string('target')->default('_self');
             $table->timestamps();
         });
     }
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('menus');
     }
 };

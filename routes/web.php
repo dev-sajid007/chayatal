@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\ProfileController;
@@ -34,32 +35,59 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
+
+
 Route::middleware(['auth','role:admin'])->group(function () {
 
-    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-    Route::group(['as'=>'category.','prefix'=>'category'],function(){
+    Route::group(['as'=>'admin.','prefix'=>'admin'],function(){
 
-        Route::get('/',[CategoryController::class, 'index'])->name('index');
-        Route::get('/create',[CategoryController::class, 'create'])->name('create');
-        Route::post('/store',[CategoryController::class, 'store'])->name('store');
-        Route::get('/edit/{id}',[CategoryController::class, 'edit'])->name('edit');
-        Route::post('/update/{id}',[CategoryController::class, 'update'])->name('update');
-        Route::get('/delete/{id}',[CategoryController::class, 'delete'])->name('delete');
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+        Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+    
+        Route::group(['as'=>'category.','prefix'=>'category'],function(){
+    
+            Route::get('/',[CategoryController::class, 'index'])->name('index');
+            Route::get('/create',[CategoryController::class, 'create'])->name('create');
+            Route::post('/store',[CategoryController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[CategoryController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[CategoryController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[CategoryController::class, 'delete'])->name('delete');
+    
+        });
+    
+        Route::group(['as'=>'tag.','prefix'=>'tag'],function(){
+    
+            Route::get('/',[TagController::class, 'index'])->name('index');
+            Route::get('/create',[TagController::class, 'create'])->name('create');
+            Route::post('/store',[TagController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[TagController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[TagController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[TagController::class, 'delete'])->name('delete');
+    
+        });
+
+
+        Route::group(['as'=>'website.','prefix'=>'website'],function(){
+
+            Route::group(['as'=>'menu.','prefix'=>'menu'],function(){
+    
+                Route::get('/',[MenuController::class, 'index'])->name('index');
+                Route::get('/create',[MenuController::class, 'create'])->name('create');
+                Route::post('/store',[MenuController::class, 'store'])->name('store');
+                Route::get('/edit/{id}',[MenuController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}',[MenuController::class, 'update'])->name('update');
+                Route::get('/delete/{id}',[MenuController::class, 'delete'])->name('delete');
+
+                Route::post('/order',[MenuController::class, 'order'])->name('order');
+        
+            });
+
+        });
+
 
     });
-
-    Route::group(['as'=>'tag.','prefix'=>'tag'],function(){
-
-        Route::get('/',[TagController::class, 'index'])->name('index');
-        Route::get('/create',[TagController::class, 'create'])->name('create');
-        Route::post('/store',[TagController::class, 'store'])->name('store');
-        Route::get('/edit/{id}',[TagController::class, 'edit'])->name('edit');
-        Route::post('/update/{id}',[TagController::class, 'update'])->name('update');
-        Route::get('/delete/{id}',[TagController::class, 'delete'])->name('delete');
-
-    });
+   
     
 });
 

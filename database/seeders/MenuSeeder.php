@@ -2,24 +2,23 @@
 
 namespace Database\Seeders;
 
-use App\Models\Tag;
+use App\Models\Menu;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TagSeeder extends Seeder
+class MenuSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $tags = ["Carity","Fund Raising","Donation","Non Profit","Sponsor"];
+        $menus = ['Home','About','Campaign','Events','Contact'];
 
-        foreach($tags as $tag){
-            Tag::create([
-                'name' => $tag,
+        foreach($menus as $menu){
+            Menu::create([
+                'title' => $menu
             ]);
         }
-
     }
 }

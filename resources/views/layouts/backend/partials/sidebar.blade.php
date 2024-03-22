@@ -15,14 +15,14 @@
     <div class="sidebar-heading">
         Features
     </div>
-    <li class="nav-item {{(Request::is('category*'))?'active':''}}">
-        <a class="nav-link" href="{{route('category.index')}}">
+    <li class="nav-item {{(Request::is('admin/category*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.category.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
             <span>Category</span>
         </a>
     </li>
-    <li class="nav-item {{(Request::is('tag*'))?'active':''}}">
-        <a class="nav-link" href="{{route('tag.index')}}">
+    <li class="nav-item {{(Request::is('admin/tag*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.tag.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
             <span>Tag</span>
         </a>
@@ -31,13 +31,12 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
             aria-expanded="true" aria-controls="collapseBootstrap">
             <i class="far fa-fw fa-window-maximize"></i>
-            <span>Bootstrap UI</span>
+            <span>Website</span>
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Bootstrap UI</h6>
-                <a class="collapse-item" href="alerts.html">Alerts</a>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
+                <a class="collapse-item" href="{{route('admin.website.menu.index')}}">Menu</a>
+                <a class="collapse-item" href="buttons.html">Banner</a>
 
             </div>
         </div>

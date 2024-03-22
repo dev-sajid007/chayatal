@@ -29,11 +29,11 @@
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Create Category</h6>
-                    <a href="{{ route('category.index') }}" class="btn btn-dark"><i
+                    <a href="{{ route('admin.category.index') }}" class="btn btn-dark"><i
                             class="fa fa-arrow-left"></i> Back</a>
                 </div>
                 <form method="POST"
-                    action="{{ isset($category) ? route('category.update', $category->id) : route('category.store') }}"
+                    action="{{ isset($category) ? route('admin.category.update', $category->id) : route('admin.category.store') }}"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row">

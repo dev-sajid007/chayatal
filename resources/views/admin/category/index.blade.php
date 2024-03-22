@@ -18,7 +18,7 @@
         <div class="card mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Category List</h6>
-                <a href="{{route('category.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+                <a href="{{route('admin.category.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
             </div>
             <div class="table-responsive p-3">
                 <table class="table align-items-center table-flush" id="dataTable">
@@ -36,8 +36,8 @@
                                 <td>{{$category->name}}</td>
                           
                                 <td>
-                                    <a href="{{route('category.edit',$category->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                    <a id="delete" href="{{route('category.delete',$category->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></a>
+                                    <a href="{{route('admin.category.edit',$category->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a id="delete" href="{{route('admin.category.delete',$category->id)}}" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></a>
                                 </td>
                                 
                             </tr>

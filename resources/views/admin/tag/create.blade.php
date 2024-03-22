@@ -15,11 +15,11 @@
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Create Tag</h6>
-                    <a href="{{ route('tag.index') }}" class="btn btn-dark"><i
+                    <a href="{{ route('admin.tag.index') }}" class="btn btn-dark"><i
                             class="fa fa-arrow-left"></i> Back</a>
                 </div>
                 <form method="POST"
-                    action="{{ isset($tag) ? route('tag.update', $tag->id) : route('tag.store') }}"
+                    action="{{ isset($tag) ? route('admin.tag.update', $tag->id) : route('admin.tag.store') }}"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row">

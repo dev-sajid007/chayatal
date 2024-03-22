@@ -35,7 +35,7 @@ class TagController extends Controller
             'message' => 'Tag Create Successfully ',
             'alert-type' => 'success'
         );
-        return redirect()->route('tag.index')->with($notification);
+        return redirect()->route('admin.tag.index')->with($notification);
     }
 
 
@@ -61,7 +61,7 @@ class TagController extends Controller
             'message' => 'Tag Update Successfully ',
             'alert-type' => 'success'
         );
-        return redirect()->route('tag.index')->with($notification);
+        return redirect()->route('admin.tag.index')->with($notification);
     }
 
 
@@ -74,6 +74,6 @@ class TagController extends Controller
             'message' => 'Tag Delete Successfully ',
             'alert-type' => 'success'
         );
-        return redirect()->route('tag.index')->with($notification);
+        return redirect()->route('admin.tag.index')->with($notification);
     }
 }

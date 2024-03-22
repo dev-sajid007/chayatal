@@ -37,7 +37,7 @@ class CategoryController extends Controller
             'message' => 'Category Create Successfully ',
             'alert-type' => 'success'
         );
-        return redirect()->route('category.index')->with($notification);
+        return redirect()->route('admin.category.index')->with($notification);
     }
 
 
@@ -64,7 +64,7 @@ class CategoryController extends Controller
             'message' => 'Category Update Successfully ',
             'alert-type' => 'success'
         );
-        return redirect()->route('category.index')->with($notification);
+        return redirect()->route('admin.category.index')->with($notification);
     }
 
     public function delete($id)
@@ -76,6 +76,6 @@ class CategoryController extends Controller
             'message' => 'Category Delete Successfully ',
             'alert-type' => 'success'
         );
-        return redirect()->route('category.index')->with($notification);
+        return redirect()->route('admin.category.index')->with($notification);
     }
 }
