@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-md-4 float-right">
                         <div class="form-group">
-                            <label for="">Upload Photo</label>
+                            <label for="">Upload Photo <code>(Size: 1280 * 700)</code></label>
                             <input type="file" name="photo" class="dropify @error('photo') is-invalid @enderror">
                             @error('photo')
                             <span class="text-danger" role="alert">

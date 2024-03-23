@@ -16,7 +16,7 @@ class BannerController extends Controller
     public function index()
     {
         $banners = Banner::all();
-        return view('admin.website.banner.index',compact('banners'));
+        return view('admin.website.banner.index', compact('banners'));
     }
 
 
@@ -58,12 +58,67 @@ class BannerController extends Controller
         ]);
 
         //image upload
-        $this->uploadFileWithResize($request->photo,$banner,'photo','banner',1200,700);
+        if ($request->photo) {
+            $this->uploadFileWithResize($request->photo, $banner, 'photo', 'banner', 1200, 700);
+        }
 
 
-       
+
         $notification = array(
             'message' => 'Banner Create Successfully ',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.website.banner.index')->with($notification);
+    }
+
+
+    public function edit($id)
+    {
+        $banner = Banner::find($id);
+        return view('admin.website.banner.create', compact('banner'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $banner = Banner::find($id);
+
+        $banner->update([
+            'title'       => $request->title,
+            'description' => $request->description,
+            'button_text' => $request->button_text,
+            'button_link' => $request->button_link,
+            'photo'       => $banner->photo,
+            'status'      => $request->filled('status')
+        ]);
+
+        //image upload
+        if ($request->photo) {
+
+            if (file_exists($banner->photo) and !empty($banner->photo)) {
+                unlink($banner->photo);
+            }
+            $this->uploadFileWithResize($request->photo, $banner, 'photo', 'banner', 1200, 700);
+        }
+
+        $notification = array(
+            'message' => 'Banner Create Successfully ',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.website.banner.index')->with($notification);
+    }
+
+
+    public function delete($id){
+
+        $banner = Banner::find($id);
+        if (file_exists($banner->photo) and !empty($banner->photo)) {
+            unlink($banner->photo);
+        }
+        $banner->delete();
+
+        $notification = array(
+            'message' => 'Banner Delete Successfully ',
             'alert-type' => 'success'
         );
         return redirect()->route('admin.website.banner.index')->with($notification);

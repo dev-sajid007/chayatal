@@ -50,6 +50,7 @@ trait ImageSaver
 
                 if (file_exists($basePath . '/' . $model->image) && $model->image != '') {
                     unlink($basePath . '/' . $model->image);
+                    dd("Ache mama");
                 }
 
                 if (!is_dir($basePath)) {
