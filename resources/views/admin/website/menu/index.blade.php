@@ -17,7 +17,7 @@
     .menu-builder .dd .item_actions{
         z-index: 9;
         position: relative;
-        top: 10px;
+        top: 6px;
         right: 10px;
     }
     .menu-builder .dd .item_actions .edit{
@@ -63,11 +63,19 @@
 
                                     @forelse ($menus as $menu)
                                         <li class="dd-item" data-id="{{$menu->id}}">
+                                            <div class="item_actions float-right">
+                                                <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                                <a id="delete" href="" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                                            </div>
                                             <div class="dd-handle">{{$menu->title}}</div>
                                             @if(!$menu->childs->isEmpty())
                                                 <ol class="dd-list">
                                                     @foreach($menu->childs as $childItem)
                                                         <li class="dd-item" data-id="{{$childItem->id}}">
+                                                            <div class="item_actions float-right">
+                                                                <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                                                                <a id="delete" href="" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                                                            </div>
                                                             <div class="dd-handle">{{$childItem->title}}</div>
                                                         </li>
                                                     @endforeach
