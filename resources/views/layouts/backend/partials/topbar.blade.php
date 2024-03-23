@@ -2,6 +2,8 @@
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
+
+          <a class="badge badge-dark" target="_blank" href="{{route('home')}}"><i class="fa fa-globe"></i></a>
           <ul class="navbar-nav ml-auto">
            
             <li class="nav-item dropdown no-arrow mx-1">

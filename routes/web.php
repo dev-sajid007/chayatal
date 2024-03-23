@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\TagController;
@@ -70,16 +71,28 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::group(['as'=>'website.','prefix'=>'website'],function(){
 
             Route::group(['as'=>'menu.','prefix'=>'menu'],function(){
-    
+
                 Route::get('/',[MenuController::class, 'index'])->name('index');
                 Route::get('/create',[MenuController::class, 'create'])->name('create');
                 Route::post('/store',[MenuController::class, 'store'])->name('store');
                 Route::get('/edit/{id}',[MenuController::class, 'edit'])->name('edit');
                 Route::post('/update/{id}',[MenuController::class, 'update'])->name('update');
                 Route::get('/delete/{id}',[MenuController::class, 'delete'])->name('delete');
-
+                //ajax route
                 Route::post('/order',[MenuController::class, 'order'])->name('order');
-        
+            });
+
+            Route::group(['as'=>'banner.','prefix'=>'banner'],function(){
+
+                Route::get('/',[BannerController::class, 'index'])->name('index');
+                Route::get('/create',[BannerController::class, 'create'])->name('create');
+                Route::post('/store',[BannerController::class, 'store'])->name('store');
+                Route::get('/edit/{id}',[BannerController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}',[BannerController::class, 'update'])->name('update');
+                Route::get('/delete/{id}',[BannerController::class, 'delete'])->name('delete');
+                //ajax route
+                Route::post('/status',[BannerController::class, 'status'])->name('status');
+          
             });
 
         });

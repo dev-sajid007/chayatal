@@ -27,17 +27,16 @@
             <span>Tag</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+    <li class="nav-item {{(Request::is('admin/website*'))?'active':''}}">
+        <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseBootstrap"
             aria-expanded="true" aria-controls="collapseBootstrap">
             <i class="far fa-fw fa-window-maximize"></i>
             <span>Website</span>
         </a>
-        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+        <div id="collapseBootstrap" class="collapse {{Request::is('admin/website*')?'show':''}}" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('admin.website.menu.index')}}">Menu</a>
-                <a class="collapse-item" href="buttons.html">Banner</a>
-
+                <a class="collapse-item {{(Request::is('admin/website/menu*'))?'active':''}}" href="{{route('admin.website.menu.index')}}">Menu </a>
+                <a class="collapse-item {{(Request::is('admin/website/banner*'))?'active':''}}" href="{{route('admin.website.banner.index')}}">Banner </a>
             </div>
         </div>
     </li>
