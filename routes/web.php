@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BannerController;
+use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\TagController;
+use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -92,6 +94,19 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[BannerController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/status',[BannerController::class, 'status'])->name('status');
+          
+            });
+
+            Route::group(['as'=>'testimonial.','prefix'=>'testimonial'],function(){
+
+                Route::get('/',[TestimonialController::class, 'index'])->name('index');
+                Route::get('/create',[TestimonialController::class, 'create'])->name('create');
+                Route::post('/store',[TestimonialController::class, 'store'])->name('store');
+                Route::get('/edit/{id}',[TestimonialController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}',[TestimonialController::class, 'update'])->name('update');
+                Route::get('/delete/{id}',[TestimonialController::class, 'delete'])->name('delete');
+                //ajax route
+                Route::post('/status',[TestimonialController::class, 'status'])->name('status');
           
             });
 

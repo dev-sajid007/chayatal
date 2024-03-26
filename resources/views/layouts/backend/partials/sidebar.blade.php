@@ -37,6 +37,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{(Request::is('admin/website/menu*'))?'active':''}}" href="{{route('admin.website.menu.index')}}">Menu </a>
                 <a class="collapse-item {{(Request::is('admin/website/banner*'))?'active':''}}" href="{{route('admin.website.banner.index')}}">Banner </a>
+                <a class="collapse-item {{(Request::is('admin/website/testimonial*'))?'active':''}}" href="{{route('admin.website.testimonial.index')}}">Testimonial </a>
             </div>
         </div>
     </li>

@@ -589,7 +589,7 @@
     <!-- img-gallery end -->
 
     <!-- our-volunteers section -->
-    <section class="our-volunteers section-padding">
+    {{-- <section class="our-volunteers section-padding">
         <div class="container">
             <div class="our-volunteers-title text-center">
                 <div class="section-title"><h2>Our <span>Volunteers</span></h2></div>
@@ -698,7 +698,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- our-volunteers section end -->
 
     <!-- testimonials area -->
@@ -706,7 +706,7 @@
         <div class="container">
             <div class="testimonials-title">
                 <div class="section-title"><h2>What People <span>Say</span></h2></div>
-                <div class="title"><p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p></div>
+                <div class="title"></div>
             </div>
             <div class="row">
                 <div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
@@ -716,7 +716,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Enim ad minim veniam quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit.</p>
                             </div>
                             <div class="testimonials-autor">
-                                <figure><img src="images/home/tes-autor.png" alt=""></figure>
+                                <figure><img src="{{asset('frontend/images/home/tes-autor.png')}}" alt=""></figure>
                                 <div class="autor">Samanta Doe</div>
                                 <span>Donator</span>
                             </div>
@@ -726,7 +726,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Enim ad minim veniam quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit.</p>
                             </div>
                             <div class="testimonials-autor">
-                                <figure><img src="images/home/tes-autor.png" alt=""></figure>
+                                <figure><img src="{{asset('frontend/images/home/tes-autor.png')}}" alt=""></figure>
                                 <div class="autor">Samanta Doe</div>
                                 <span>Donator</span>
                             </div>
@@ -736,7 +736,7 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Enim ad minim veniam quis nostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit.</p>
                             </div>
                             <div class="testimonials-autor">
-                                <figure><img src="images/home/tes-autor.png" alt=""></figure>
+                                <figure><img src="{{asset('frontend/images/home/tes-autor.png')}}" alt=""></figure>
                                 <div class="autor">Samanta Doe</div>
                                 <span>Donator</span>
                             </div>
