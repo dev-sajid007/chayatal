@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\TestimonialController;
@@ -107,6 +108,19 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[TestimonialController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/status',[TestimonialController::class, 'status'])->name('status');
+          
+            });
+
+            Route::group(['as'=>'gallery.','prefix'=>'gallery'],function(){
+
+                Route::get('/',[GalleryController::class, 'index'])->name('index');
+                Route::get('/create',[GalleryController::class, 'create'])->name('create');
+                Route::post('/store',[GalleryController::class, 'store'])->name('store');
+                Route::get('/edit/{id}',[GalleryController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}',[GalleryController::class, 'update'])->name('update');
+                Route::get('/delete/{id}',[GalleryController::class, 'delete'])->name('delete');
+                //ajax route
+                Route::post('/status',[GalleryController::class, 'status'])->name('status');
           
             });
 

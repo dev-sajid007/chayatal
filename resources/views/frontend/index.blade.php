@@ -206,93 +206,25 @@
         <div class="container">
             <div class="img-gallery-title">
                 <div class="section-title"><h2>Our <span>Gallery</span></h2></div>
-                <div class="title"><p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p></div>
+                <div class="title"><p></p></div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <figure><img src="{{asset('frontend/images/gallery/1.jpg')}}" alt=""></figure>
-                            <div class="overlay">
-                                <div class="box">
-                                    <div class="content">
-                                        <a href="{{asset('frontend/images/gallery/1.jpg')}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                @foreach ($galleries as $gallery)
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-item">
+                            <div class="img-holder">
+                                <figure><img src="{{asset($gallery->photo)}}" alt=""></figure>
+                                <div class="overlay">
+                                    <div class="box">
+                                        <div class="content">
+                                            <a href="{{asset($gallery->photo)}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <figure><img src="{{asset('frontend/images/gallery/2.jpg')}}" alt=""></figure>
-                            <div class="overlay">
-                                <div class="box">
-                                    <div class="content">
-                                        <a href="{{asset('frontend/images/gallery/1.jpg')}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <figure><img src="{{asset('frontend/images/gallery/3.jpg')}}" alt=""></figure>
-                            <div class="overlay">
-                                <div class="box">
-                                    <div class="content">
-                                        <a href="{{asset('frontend/images/gallery/1.jpg')}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <figure><img src="{{asset('frontend/images/gallery/4.jpg')}}" alt=""></figure>
-                            <div class="overlay">
-                                <div class="box">
-                                    <div class="content">
-                                        <a href="{{asset('frontend/images/gallery/1.jpg')}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <figure><img src="{{asset('frontend/images/gallery/5.jpg')}}" alt=""></figure>
-                            <div class="overlay">
-                                <div class="box">
-                                    <div class="content">
-                                        <a href="{{asset('frontend/images/gallery/1.jpg')}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <figure><img src="{{asset('frontend/images/gallery/6.jpg')}}" alt=""></figure>
-                            <div class="overlay">
-                                <div class="box">
-                                    <div class="content">
-                                        <a href="{{asset('frontend/images/gallery/1.jpg')}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="gallery-btn">
                 <a href="gallery.html" class="btn-two">View All</a>
