@@ -15,12 +15,15 @@ class GallerySeeder extends Seeder
     {
         Gallery::create([
             'photo' => "demo/gallery/gallery-1.jpg",
+            'status' => 1
         ]);
         Gallery::create([
             'photo' => "demo/gallery/gallery-2.jpg",
+            'status' => 1
         ]);
         Gallery::create([
             'photo' => "demo/gallery/gallery-3.jpg",
+            'status' => 1
         ]);
     }
 }

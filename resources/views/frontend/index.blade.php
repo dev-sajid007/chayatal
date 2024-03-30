@@ -503,27 +503,14 @@
         <div class="container">
             <div class="sponsors-title">
                 <div class="section-title"><h2>Our <span>Sponsors</span></h2></div>
-                <div class="title"><p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p></div>
+                <div class="title"><p></p></div>
             </div>
             <ul class="sponsors-slider">
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/1.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/2.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/3.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/4.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/5.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/6.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/1.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/2.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/3.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/4.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/5.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/6.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/1.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/2.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/3.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/4.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/5.png')}}" alt=""></figure></a></li>
-                <li><a href="#"><figure><img src="{{asset('frontend/images/sponsors/6.png')}}" alt=""></figure></a></li>
+                
+                @foreach ($sponsors as $sponsor)
+                    <li><a href="#"><figure><img src="{{asset($sponsor->photo)}}" alt=""></figure></a></li>
+                @endforeach
+                
             </ul>
         </div>
     </section>

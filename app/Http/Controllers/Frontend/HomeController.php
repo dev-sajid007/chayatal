@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Gallery;
+use App\Models\Sponsor;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class HomeController extends Controller
         $data['banners']      = Banner::where('status',1)->get();
         $data['testimonials'] = Testimonial::where('status',1)->get();
         $data['galleries']    = Gallery::where('status',1)->get();
+        $data['sponsors']     = Sponsor::where('status',1)->get();
        
         return view('frontend.index',$data);
     }
