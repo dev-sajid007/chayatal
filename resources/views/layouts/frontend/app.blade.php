@@ -9,8 +9,8 @@
 <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
 
 <!--Favicon-->
-<link rel="shortcut icon" href="{{asset('frontend/images/favicon.ico')}}" type="image/x-icon">
-<link rel="icon" href="{{asset('frontend/images/favicon.ico')}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{asset($info->favicon)}}" type="image/x-icon">
+<link rel="icon" href="{{asset($info->favicon)}}" type="image/x-icon">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,7 +82,7 @@
             	<div class="row">
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="logo">
-                            <a href="index.html"><img src="{{asset('frontend/images/home/logo.png')}}" alt=""></a>
+                            <a href="index.html"><img src="{{asset($info->logo)}}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-12 col-xs-12">

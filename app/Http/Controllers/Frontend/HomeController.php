@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Gallery;
 use App\Models\Sponsor;
 use App\Models\Testimonial;
+use App\Models\WebInfo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,6 +18,7 @@ class HomeController extends Controller
         $data['testimonials'] = Testimonial::where('status',1)->get();
         $data['galleries']    = Gallery::where('status',1)->get();
         $data['sponsors']     = Sponsor::where('status',1)->get();
+        $data['info']         = WebInfo::find(1);
        
         return view('frontend.index',$data);
     }
