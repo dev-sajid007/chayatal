@@ -40,6 +40,7 @@
                 <a class="collapse-item {{(Request::is('admin/website/gallery*'))?'active':''}}" href="{{route('admin.website.gallery.index')}}">Gallery </a>
                 <a class="collapse-item {{(Request::is('admin/website/testimonial*'))?'active':''}}" href="{{route('admin.website.testimonial.index')}}">Testimonial </a>
                 <a class="collapse-item {{(Request::is('admin/website/sponsor*'))?'active':''}}" href="{{route('admin.website.sponsor.index')}}">Sponsor </a>
+                <a class="collapse-item {{(Request::is('admin/website/event*'))?'active':''}}" href="{{route('admin.website.event.index')}}">Event </a>
                 <a class="collapse-item {{(Request::is('admin/website/web-info*'))?'active':''}}" href="{{route('admin.website.web-info.index')}}">Web Info </a>
             </div>
         </div>

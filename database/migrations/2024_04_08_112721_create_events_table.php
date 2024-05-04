@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('web_infos', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('logo')->nullable();
-            $table->string('favicon')->nullable();
+            $table->string('description');
+            $table->string('date');
+            $table->string('start_time');
+            $table->string('end_time');
+            $table->string('location');
+            $table->string('photo');
             $table->timestamps();
         });
     }
@@ -25,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('web_infos');
+        Schema::dropIfExists('events');
     }
 };

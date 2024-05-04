@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\SponsorController;
@@ -137,6 +138,19 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[SponsorController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/status',[SponsorController::class, 'status'])->name('status');
+          
+            });
+
+            Route::group(['as'=>'event.','prefix'=>'event'],function(){
+
+                Route::get('/',[EventController::class, 'index'])->name('index');
+                Route::get('/create',[EventController::class, 'create'])->name('create');
+                Route::post('/store',[SponsorController::class, 'store'])->name('store');
+                Route::get('/edit/{id}',[EventController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}',[EventController::class, 'update'])->name('update');
+                Route::get('/delete/{id}',[EventController::class, 'delete'])->name('delete');
+                //ajax route
+                Route::post('/status',[EventController::class, 'status'])->name('status');
           
             });
 
