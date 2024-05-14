@@ -51,7 +51,7 @@
         <div class="card mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Menu List</h6>
-                <a href="{{route('admin.tag.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+                <a href="{{route('admin.website.menu.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
             </div>
             <div class="table-responsive p-3">
                 <div class="row">

@@ -36,6 +36,7 @@
         <div id="collapseBootstrap" class="collapse {{Request::is('admin/website*')?'show':''}}" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{(Request::is('admin/website/menu*'))?'active':''}}" href="{{route('admin.website.menu.index')}}">Menu </a>
+                <a class="collapse-item {{(Request::is('admin/website/page*'))?'active':''}}" href="{{route('admin.website.page.index')}}">Page </a>
                 <a class="collapse-item {{(Request::is('admin/website/banner*'))?'active':''}}" href="{{route('admin.website.banner.index')}}">Banner </a>
                 <a class="collapse-item {{(Request::is('admin/website/gallery*'))?'active':''}}" href="{{route('admin.website.gallery.index')}}">Gallery </a>
                 <a class="collapse-item {{(Request::is('admin/website/testimonial*'))?'active':''}}" href="{{route('admin.website.testimonial.index')}}">Testimonial </a>

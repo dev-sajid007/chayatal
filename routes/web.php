@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\MenuController;
+use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\SponsorController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\TestimonialController;
@@ -28,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('{slug}',[PageController::class,'page'])->name('page');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -87,6 +89,17 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[MenuController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/order',[MenuController::class, 'order'])->name('order');
+            });
+
+            Route::group(['as'=>'page.','prefix'=>'page'],function(){
+
+                Route::get('/',[PageController::class, 'index'])->name('index');
+                Route::get('/create',[PageController::class, 'create'])->name('create');
+                Route::post('/store',[PageController::class, 'store'])->name('store');
+                Route::get('/edit/{id}',[PageController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}',[PageController::class, 'update'])->name('update');
+                Route::get('/delete/{id}',[PageController::class, 'delete'])->name('delete');
+         
             });
 
             Route::group(['as'=>'banner.','prefix'=>'banner'],function(){

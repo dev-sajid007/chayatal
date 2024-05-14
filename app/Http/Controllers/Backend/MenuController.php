@@ -15,6 +15,12 @@ class MenuController extends Controller
     }
 
 
+    public function create()
+    {
+        return view('admin.website.menu.create');
+    }
+
+
     public function order(Request $request){
         $menuItemOrder = json_decode($request->get('order'));
         $this->ordermenu($menuItemOrder,null);
