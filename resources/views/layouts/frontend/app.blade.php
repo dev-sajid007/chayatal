@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Charitex | Responsive HTML 5 Template</title>
+    <title>Chayatal Bangladesh</title>
     <!-- Stylesheets -->
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/revolution-slider.css') }}" rel="stylesheet">
