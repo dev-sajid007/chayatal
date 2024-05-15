@@ -55,17 +55,12 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <ul class="top-left">
-                                <li><i class="fa fa-phone"></i>Call: 123 4561 5523 </li>
-                                <li><i class="fa fa-envelope"></i>Email: info@templatepath.com</li>
+                                <li><i class="fa fa-phone"></i>Call: +88 02 5815 2121 </li>
+                                <li><i class="fa fa-envelope"></i>Email: chayatalbd@gmail.com</li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="top-right clearfix">
-                                <div class="search-button">
-                                    <div class="toggle-search">
-                                        <button><span class="fa fa-search" aria-hidden="true"></span></button>
-                                    </div>
-                                </div>
                                 <ul class="social-link">
                                     <li>Follow Us On: </li>
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
