@@ -65,7 +65,7 @@
                                         <li class="dd-item" data-id="{{$menu->id}}">
                                             <div class="item_actions float-right">
                                                 <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                                                <a id="delete" href="" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                                                <a id="delete" href="{{route('admin.website.menu.delete',$menu->id)}}" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
                                             </div>
                                             <div class="dd-handle">{{$menu->title}}</div>
                                             @if(!$menu->childs->isEmpty())
@@ -74,7 +74,7 @@
                                                         <li class="dd-item" data-id="{{$childItem->id}}">
                                                             <div class="item_actions float-right">
                                                                 <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                                                                <a id="delete" href="" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                                                                <a id="delete" href="{{route('admin.website.menu.delete',$childItem->id)}}" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
                                                             </div>
                                                             <div class="dd-handle">{{$childItem->title}}</div>
                                                         </li>

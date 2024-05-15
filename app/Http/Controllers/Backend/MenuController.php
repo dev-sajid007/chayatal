@@ -48,11 +48,28 @@ class MenuController extends Controller
             'url' => $request->url,
             'target' => $request->target,
         ]);
+
+
         //notification
         $notification = array(
             'message' => 'Menu Item Added',
             'alert-type' => 'success'
         );
         return redirect()->route('admin.website.menu.index')->with($notification);
+    }
+
+
+    public function delete($id)
+    {
+        $menu = Menu::find($id);
+
+        $menu->delete();
+
+        //notification
+        $notification = array(
+            'message' => 'Menu Delete Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }
