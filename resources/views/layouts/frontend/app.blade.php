@@ -100,6 +100,7 @@
                                     </div>
                                     <div class="navbar-collapse collapse clearfix">
                                         <ul class="navigation clearfix">
+
                                             @foreach ($menus as $menu)
                                             <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="index.html">{{$menu->title}}</a>
                                                 @if ($menu->childs)
@@ -111,6 +112,7 @@
                                                 @endif
                                             </li>
                                             @endforeach
+
                                         </ul>
                                     </div>
                                 </nav>
@@ -145,38 +147,17 @@
                                     </div>
                                     <div class="navbar-collapse collapse clearfix">
                                         <ul class="navigation clearfix">
-                                            <li class="current"><a href="index.html">Home</a>
-                                            </li>
-                                            <li><a href="about.html">about</a>
-                                            </li>
-                                            <li class="dropdown"><a href="#">Causes</a>
-                                                <ul>
-                                                    <li><a href="causes.html">Causes</a></li>
-                                                    <li><a href="causes-details.html">Causes Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="#">Events</a>
-                                                <ul>
-                                                    <li><a href="events.html">Our Events</a></li>
-                                                    <li><a href="events-details.html">Events Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="#">Pages</a>
-                                                <ul>
-                                                    <li><a href="team.html">Our Team</a></li>
-                                                    <li><a href="single-volunteer.html">Single Volunteer</a></li>
-                                                    <li><a href="gallery.html">Our Gallery</a></li>
-                                                    <li><a href="error.html">Error Page</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="blog.html">Blog</a>
-                                                <ul>
-                                                    <li><a href="our-blog.html">Our Blog</a></li>
-                                                    <li><a href="single-blog.html">Blog Single</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a>
-                                            </li>
+                                            @foreach ($menus as $menu)
+                                                <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="index.html">{{$menu->title}}</a>
+                                                    @if ($menu->childs)
+                                                    <ul>
+                                                        @foreach ($menu->childs as $item)
+                                                            <li><a href="causes.html">{{ $item->title}}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                    @endif
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </nav>
