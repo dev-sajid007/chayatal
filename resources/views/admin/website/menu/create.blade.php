@@ -35,11 +35,11 @@
                             class="fa fa-arrow-left"></i> Back</a>
                 </div>
                 <div class="card-body">
-                    <form action="{{isset($banner)? route('admin.website.banner.update',$banner->id): route('admin.website.banner.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('admin.website.menu.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="">Title</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="title" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="">Select Page</label>
@@ -48,8 +48,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="url">URL for menu item</label>
-                            <input  id="menu_url" type="text" class="form-control form-control-sm @error('url') is-invalid @enderror" name="url" value="{{ $menuItem->url ?? old('url') }}"  {{@$menuItem->is_static == 1 ? "readonly":""}}>
+                            <label for="url">URL for menu</label>
+                            <input  id="menu_url" type="text" class="form-control" name="url" required>
                             @error('url')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

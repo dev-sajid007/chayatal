@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('{slug}',[PageController::class,'page'])->name('page');
+// Route::get('{slug}',[PageController::class,'page'])->name('page');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

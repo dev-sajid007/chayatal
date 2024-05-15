@@ -38,4 +38,21 @@ class MenuController extends Controller
             }
         }
     }
+
+
+    public function store(Request $request)
+    {
+
+        Menu::create([
+            'title' => $request->title,
+            'url' => $request->url,
+            'target' => $request->target,
+        ]);
+        //notification
+        $notification = array(
+            'message' => 'Menu Item Added',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.website.menu.index')->with($notification);
+    }
 }
