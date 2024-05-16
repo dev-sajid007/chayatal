@@ -80,7 +80,7 @@
                                 @isset($page)
                                     <h5 class="m-2">Old Image</h5>
                                     <img width="80" class="img-thumbnail"
-                                        src="{{ isset($page->image) ? Config::get('app.s3_url') . $page->image : 'default.png' }}"
+                                        src="{{asset($page->image)}}"
                                         alt="Page Image">
                                 @endisset
                             </div>

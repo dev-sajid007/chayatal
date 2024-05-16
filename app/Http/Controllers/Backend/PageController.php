@@ -58,4 +58,61 @@ class PageController extends Controller
         );
         return redirect()->route('admin.website.page.index')->with($notification);
     }
+
+
+
+    public function edit($id)
+    {
+        $page = Page::find($id);
+        return view('admin.website.page.create',compact('page'));
+    }
+
+
+
+    public function update(Request $request,$id)
+    {
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required'
+        ]);
+
+        $page = Page::find($id);
+
+        $page->update([
+            'title'   =>  $request->title,
+            'slug'    =>  Str::slug($request->title),
+            'content' => $request->content,
+            'image'   => $page->image
+        ]);
+
+        //image upload
+        if ($request->image) {
+            $this->uploadFileWithResize($request->image, $page, 'image', 'page', 1200, 720);
+        }
+
+
+
+        $notification = array(
+            'message' => 'Page Update Successfully ',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.website.page.index')->with($notification);
+    }
+
+
+    public function delete($id)
+    {
+        $page = Page::find($id);
+       
+        if (file_exists($page->image) and !empty($page->image)) {
+            unlink($page->image);
+        }
+        $page->delete();
+
+        $notification = array(
+            'message' => 'Page Delete Successfully ',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.website.page.index')->with($notification);
+    }
 }
