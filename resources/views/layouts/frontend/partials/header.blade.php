@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12 col-xs-12">
                     <div class="logo">
-                        <a href="index.html"><img src="{{ asset($info->logo) }}" alt=""></a>
+                        <a href="{{route('home')}}"><img src="{{ asset($info->logo) }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-12 col-xs-12">
