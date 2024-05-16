@@ -83,19 +83,19 @@
                     <div class="contact-widget">
                         <h4>contact us</h4>
                         <div class="text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
+                            <p>We aspire to establish a secure society where children are healthy and well-educated.</p>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-home" aria-hidden="true"></i></div>
-                            <div class="text">1201 park street, Fifth Avenue,</div>
+                            <div class="text">37/1 - A, Johuri Moholla, Shyamoli, Mohammadpur, Dhaka-1207.</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-phone"></i></div>
-                            <div class="text">[88] 657 524 332</div>
+                            <div class="text">+880 1713-391333</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                            <div class="mail"><a href="#">nfo@startravel.com</a></div>
+                            <div class="mail"><a href="#">chayatalbd@gmail.com</a></div>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
         </div>
         <div class="footer-bottom text-center">
             <div class="text">
-                <p>Copyright © copy <a href="#">Charity</a> 2017. All Rights Reserved</p>
+                <p>Copyright © copy <a href="#">Chayatal</a> 2024. All Rights Reserved</p>
             </div>
         </div>
     </div>
