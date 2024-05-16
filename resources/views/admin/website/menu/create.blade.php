@@ -31,15 +31,15 @@
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Create Menu</h6>
-                    <a href="{{ route('admin.website.banner.index') }}" class="btn btn-dark"><i
+                    <a href="{{ route('admin.website.menu.index') }}" class="btn btn-dark"><i
                             class="fa fa-arrow-left"></i> Back</a>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('admin.website.menu.store')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{isset($menu)? route('admin.website.menu.update',$menu->id): route('admin.website.menu.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="">Title</label>
-                            <input type="text" name="title" class="form-control" required>
+                            <input type="text" name="title" class="form-control" value="{{ $menu->title ?? old('title') }}" required>
                         </div>
                         <div class="form-group">
                             <label for="">Select Page</label>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="url">URL for menu</label>
-                            <input  id="menu_url" type="text" class="form-control" name="url" required>
+                            <input  id="menu_url" type="text" class="form-control" name="url" value="{{ $menu->url ?? old('url') }}" required>
                             @error('url')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -60,14 +60,14 @@
                         <div class="form-group">
                             <label for="target">Open In</label>
                             <select class="custom-select form-control-sm" name="target" id="target">
-                                <option value="_self" @isset($menuItem) {{$menuItem->target === '_self'? "selected":""}} @endisset>Same Tab/Window</option>
-                                <option value="_blank" @isset($menuItem) {{$menuItem->target === '_blank'? "selected":""}} @endisset>New Tab</option>
+                                <option value="_self" @isset($menu) {{$menu->target === '_self'? "selected":""}} @endisset>Same Tab/Window</option>
+                                <option value="_blank" @isset($menu) {{$menu->target === '_blank'? "selected":""}} @endisset>New Tab</option>
                             </select>
                         </div>
     
                         <div class="form-group">
                             <button  type="submit" class="btn btn-primary" style="margin-top: 10px">
-                                @isset($menuItem)
+                                @isset($menu)
                                     <i class="fas fa-arrow-circle-up"></i>
                                     Update
                                 @else

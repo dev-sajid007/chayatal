@@ -59,6 +59,32 @@ class MenuController extends Controller
     }
 
 
+    public function edit($id)
+    {
+        $menu = Menu::find($id);
+        return view('admin.website.menu.create',compact('menu'));
+    }
+
+
+    public function update(Request $request,$id)
+    {
+        $menu = Menu::find($id);
+        $menu->update([
+            'title' => $request->title,
+            'url' => $request->url,
+            'target' => $request->target,
+        ]);
+
+
+        //notification
+        $notification = array(
+            'message' => 'Menu Item Updated',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.website.menu.index')->with($notification);
+    }
+
+
     public function delete($id)
     {
         $menu = Menu::find($id);

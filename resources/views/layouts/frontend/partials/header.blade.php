@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12 col-xs-12">
                     <div class="logo">
-                        <a href="index.html"><img src="{{ asset($info->logo) }}" alt=""></a>
+                        <a href="{{route('home')}}"><img src="{{ asset($info->logo) }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-12 col-xs-12">
@@ -46,11 +46,11 @@
                                 <ul class="navigation clearfix">
 
                                     @foreach ($menus as $menu)
-                                    <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="index.html">{{$menu->title}}</a>
+                                    <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="#">{{$menu->title}}</a>
                                         @if ($menu->childs)
                                         <ul>
                                             @foreach ($menu->childs as $item)
-                                                <li><a href="causes.html">{{ $item->title}}</a></li>
+                                                <li><a href="{{$item->url}}">{{ $item->title}}</a></li>
                                             @endforeach
                                         </ul>
                                         @endif
@@ -92,11 +92,11 @@
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
                                     @foreach ($menus as $menu)
-                                        <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="index.html">{{$menu->title}}</a>
+                                        <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="#">{{$menu->title}}</a>
                                             @if ($menu->childs)
                                             <ul>
                                                 @foreach ($menu->childs as $item)
-                                                    <li><a href="causes.html">{{ $item->title}}</a></li>
+                                                    <li><a href="{{$item->url}}">{{ $item->title}}</a></li>
                                                 @endforeach
                                             </ul>
                                             @endif
