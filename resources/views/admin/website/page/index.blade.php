@@ -40,7 +40,7 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$page->title}}</td>
                             <td>{{$page->slug}}</td>
-                            <td>{{$page->content}}</td>
+                            <td>{!!$page->content!!}</td>
                             <td>
                                 <img style="width: 60px" src="{{asset($page->image)}}" alt="">
                             </td>

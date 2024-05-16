@@ -26,7 +26,7 @@ class PageController extends Controller
 
     public function page($slug){
         $page = Page::where('slug',$slug)->first();
-        return $page;
+        return view('frontend.page.index',compact('page'));
     }
 
 

@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class,'index'])->name('home');
-// Route::get('{slug}',[PageController::class,'page'])->name('page');
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -194,3 +194,6 @@ Route::middleware(['auth','role:admin'])->group(function () {
 //     Route::get('/vendor/dashboard', [VendorController::class, 'dashboard'])->name('vendor.dashboard');
     
 // });
+
+
+Route::get('{slug}',[PageController::class,'page'])->name('page');
