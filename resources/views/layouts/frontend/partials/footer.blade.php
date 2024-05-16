@@ -25,13 +25,12 @@
                 <div class="footer-column col-md-3 col-sm-6 col-xs-12">
                     <div class="logo-widget">
                         <div class="footer-logo">
-                            <figure><a href="index.html"><img src="images/footer/logo.png"
+                            <figure><a href="index.html"><img src="{{asset('frontend/images/footer/logo.png')}}"
                                         alt=""></a></figure>
                         </div>
                         <div class="text">
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
-                                in a piece of classical Latin literature from 45 BC, making it over 2000 years
-                                old. Richard McClintock a Latin professor.</p>
+                            <p>Currently, Chayatal is caring for 136 girls and 113 boys, aged between 5 and 15 years, hailing from various districts of Bangladesh.
+                                 Every morning around 8:30, these children arrive at the Chayatal campus from nearby areas.</p>
                         </div>
                         <a href="contact.html">Contact us</a>
                     </div>
