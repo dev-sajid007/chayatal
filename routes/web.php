@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\AdviserControler;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -98,6 +99,17 @@ Route::middleware(['auth','role:admin'])->group(function () {
             Route::get('/edit/{id}',[GoverningBodyController::class, 'edit'])->name('edit');
             Route::post('/update/{id}',[GoverningBodyController::class, 'update'])->name('update');
             Route::get('/delete/{id}',[GoverningBodyController::class, 'delete'])->name('delete');
+    
+        });
+
+        Route::group(['as'=>'adviser.','prefix'=>'adviser'],function(){
+    
+            Route::get('/',[AdviserControler::class, 'index'])->name('index');
+            Route::get('/create',[AdviserControler::class, 'create'])->name('create');
+            Route::post('/store',[AdviserControler::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[AdviserControler::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[AdviserControler::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[AdviserControler::class, 'delete'])->name('delete');
     
         });
 

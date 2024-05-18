@@ -39,6 +39,12 @@
             <span>Governing Body</span>
         </a>
     </li>
+    <li class="nav-item {{(Request::is('admin/adviser*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.adviser.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Adviser</span>
+        </a>
+    </li>
     <li class="nav-item {{(Request::is('admin/website*'))?'active':''}}">
         <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseBootstrap"
             aria-expanded="true" aria-controls="collapseBootstrap">
