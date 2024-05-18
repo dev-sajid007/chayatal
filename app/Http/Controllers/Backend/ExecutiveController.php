@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Executive;
+use App\Models\HumanResource;
 use Illuminate\Http\Request;
 
 class ExecutiveController extends Controller
@@ -13,7 +13,7 @@ class ExecutiveController extends Controller
      */
     public function index()
     {
-        $executives = Executive::orderByDesc('id')->get();
+        $executives = HumanResource::where('type', 'executive')->orderByDesc('id')->get();
         return view('admin.executive.index', compact('executives'));
     }
 
@@ -36,7 +36,11 @@ class ExecutiveController extends Controller
         ]);
 
 
-        Executive::create($request->all());
+        HUmanResource::create([
+            'name' => $request->name,
+            'designation' => $request->designation,
+            'type' => 'executive'
+        ]);
 
         $notification = array(
             'message' => 'Executive Create Successfully ',
@@ -59,7 +63,7 @@ class ExecutiveController extends Controller
      */
     public function edit(string $id)
     {
-        $executive = Executive::find($id);
+        $executive = HUmanResource::where('type', 'executive')->where('id', $id)->first();
         return view('admin.executive.create', compact('executive'));
     }
 
@@ -73,9 +77,11 @@ class ExecutiveController extends Controller
             'designation'  => 'required',
         ]);
 
-        Executive::find($id)->update([
+        $executive = HUmanResource::where('type', 'executive')->where('id', $id)->first();
+        $executive->update([
             'name' => $request->name,
-            'designation' => $request->designation
+            'designation' => $request->designation,
+            'type' => 'executive'
         ]);
 
         $notification = array(
@@ -91,7 +97,7 @@ class ExecutiveController extends Controller
      */
     public function delete(string $id)
     {
-        $executive = Executive::find($id);
+        $executive = HUmanResource::where('type', 'executive')->where('id', $id)->first();
         $executive->delete();
 
         $notification = array(

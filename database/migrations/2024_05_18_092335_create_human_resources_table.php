@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('executives', function (Blueprint $table) {
+        Schema::create('human_resources', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('designation');
+            $table->enum('type', ['executive', 'governing_body', 'adviser']);
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('executives');
+        Schema::dropIfExists('human_resources');
     }
 };

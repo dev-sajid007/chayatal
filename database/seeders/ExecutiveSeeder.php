@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Executive;
+use App\Models\HumanResource;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,9 +20,10 @@ class ExecutiveSeeder extends Seeder
         ];
 
         foreach ($executives as $executive) {
-            Executive::updateOrCreate([
+            HumanResource::updateOrCreate([
                 'name' => $executive['name'],
                 'designation' => $executive['designation'],
+                'type'  => 'executive',
             ]);
         }
     }
