@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
+use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Menu;
 use App\Models\Sponsor;
@@ -20,7 +21,8 @@ class HomeController extends Controller
         $data['galleries']    = Gallery::where('status',1)->get();
         $data['sponsors']     = Sponsor::where('status',1)->get();
         $data['info']         = WebInfo::find(1);
-        $data['menus']        = Menu::with('childs')->whereNull('parent_id')->get(); 
+        $data['menus']        = Menu::with('childs')->whereNull('parent_id')->get();
+        $data['events']       = Event::where('status',true)->get();
         //dd($data['menus']->toArray());
         return view('frontend.index',$data);
     }

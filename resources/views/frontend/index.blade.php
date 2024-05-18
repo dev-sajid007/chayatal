@@ -383,58 +383,26 @@
                     <div class="event-carousel">
                         <div class="event-donation-title">Upcoming <span>Events</span></div>
                         <div class="events-slide">
+                            @foreach ($events as $event)
                             <div class="single-item">
-                                <div class="date">20<span>Jan</span></div>
+                                @php
+                                    $date = new DateTime($event->date);
+                                @endphp
+
+                                <div class="date">{{$date->format('d') }}<span>{{ $date->format('M') }}</span></div>
+                                
                                 <div class="event-content">
-                                    <h4><a href="events.html">Heart to Heart Event</a></h4>
+                                    <h4><a href="events.html">{{$event->title}}</a></h4>
                                     <ul class="meta">
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00 AM - 11.00 PM</li>
-                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>29 Newyork City</li>
+                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{\Carbon\Carbon::parse($event->start_time)->format('g:i A')}} - {{\Carbon\Carbon::parse($event->end_time)->format('g:i A')}}</li>
+                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{$event->location}}</li>
                                     </ul>
                                     <div class="text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor.</p>
+                                        <p>{{ Str::words($event->description, 30) }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-item">
-                                <div class="date">20<span>Jan</span></div>
-                                <div class="event-content">
-                                    <h4><a href="events.html">Heart to Heart Event</a></h4>
-                                    <ul class="meta">
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00 AM - 11.00 PM</li>
-                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>29 Newyork City</li>
-                                    </ul>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item">
-                                <div class="date">20<span>Jan</span></div>
-                                <div class="event-content">
-                                    <h4><a href="events.html">Heart to Heart Event</a></h4>
-                                    <ul class="meta">
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00 AM - 11.00 PM</li>
-                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>29 Newyork City</li>
-                                    </ul>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-item">
-                                <div class="date">20<span>Jan</span></div>
-                                <div class="event-content">
-                                    <h4><a href="events.html">Heart to Heart Event</a></h4>
-                                    <ul class="meta">
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00 AM - 11.00 PM</li>
-                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>29 Newyork City</li>
-                                    </ul>
-                                    <div class="text">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="outslide">
                             <div id="slider-next"></div>
