@@ -25,7 +25,6 @@ class SponsorController extends Controller
 
     public function store(Request $request)
     {
-       
         $request->validate([
             'photo' => 'required',
         ]);

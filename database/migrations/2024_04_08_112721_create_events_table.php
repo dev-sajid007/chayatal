@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('start_time');
             $table->string('end_time');
             $table->string('location');
-            $table->string('photo');
+            $table->string('photo')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

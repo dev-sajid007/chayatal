@@ -3,6 +3,11 @@
     <link href="{{asset('backend/admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('backend/admin/vendor/switch-button/css/bootstrap-switch-button.min.css')}}">
 
+    <style>
+        .table td {
+            vertical-align: middle;
+        }
+    </style>
 @endpush
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -36,7 +41,7 @@
                     </thead>
                     <tbody>
                        @foreach ($events as $event)
-                           <tr>
+                           <tr class="align-middle">
                             <td>{{$loop->iteration}}</td>
                             <td>
                                 <img src="{{asset($event->photo)}}" class="img-thumbnail" style="width: 120px" alt="">
@@ -75,7 +80,7 @@
                 var mode = $(this).prop('checked');
                 var id = $(this).val();
                 $.ajax({
-                    url :'{{route('admin.website.banner.status')}}',
+                    url :'{{route('admin.website.event.status')}}',
                     type:'post',
                     data:{
                         _token: '{{csrf_token()}}',
