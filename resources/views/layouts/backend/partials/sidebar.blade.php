@@ -27,6 +27,12 @@
             <span>Tag</span>
         </a>
     </li>
+    <li class="nav-item {{(Request::is('admin/executive*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.executive.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Executive</span>
+        </a>
+    </li>
     <li class="nav-item {{(Request::is('admin/website*'))?'active':''}}">
         <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseBootstrap"
             aria-expanded="true" aria-controls="collapseBootstrap">

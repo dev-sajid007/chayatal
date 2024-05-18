@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EventController;
+use App\Http\Controllers\Backend\ExecutiveController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\PageController;
@@ -73,6 +74,18 @@ Route::middleware(['auth','role:admin'])->group(function () {
             Route::get('/edit/{id}',[TagController::class, 'edit'])->name('edit');
             Route::post('/update/{id}',[TagController::class, 'update'])->name('update');
             Route::get('/delete/{id}',[TagController::class, 'delete'])->name('delete');
+    
+        });
+
+
+        Route::group(['as'=>'executive.','prefix'=>'executive'],function(){
+    
+            Route::get('/',[ExecutiveController::class, 'index'])->name('index');
+            Route::get('/create',[ExecutiveController::class, 'create'])->name('create');
+            Route::post('/store',[ExecutiveController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[ExecutiveController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[ExecutiveController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[ExecutiveController::class, 'delete'])->name('delete');
     
         });
 
