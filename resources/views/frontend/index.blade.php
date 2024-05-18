@@ -398,7 +398,7 @@
                                         <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{$event->location}}</li>
                                     </ul>
                                     <div class="text">
-                                        <p>{{ Str::words($event->description, 30) }}</p>
+                                        <p>{{ Str::words($event->description, 23) }}</p>
                                     </div>
                                 </div>
                             </div>

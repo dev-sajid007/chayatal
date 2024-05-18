@@ -33,6 +33,12 @@
             <span>Executive</span>
         </a>
     </li>
+    <li class="nav-item {{(Request::is('admin/governing_body*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.governing_body.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Governing Body</span>
+        </a>
+    </li>
     <li class="nav-item {{(Request::is('admin/website*'))?'active':''}}">
         <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseBootstrap"
             aria-expanded="true" aria-controls="collapseBootstrap">

@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\ExecutiveController;
 use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\GoverningBodyController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\SponsorController;
@@ -89,6 +90,17 @@ Route::middleware(['auth','role:admin'])->group(function () {
     
         });
 
+        Route::group(['as'=>'governing_body.','prefix'=>'governing_body'],function(){
+    
+            Route::get('/',[GoverningBodyController::class, 'index'])->name('index');
+            Route::get('/create',[GoverningBodyController::class, 'create'])->name('create');
+            Route::post('/store',[GoverningBodyController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[GoverningBodyController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[GoverningBodyController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[GoverningBodyController::class, 'delete'])->name('delete');
+    
+        });
+
 
         Route::group(['as'=>'website.','prefix'=>'website'],function(){
 
@@ -164,7 +176,6 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[SponsorController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/status',[SponsorController::class, 'status'])->name('status');
-          
             });
 
             Route::group(['as'=>'event.','prefix'=>'event'],function(){
