@@ -231,5 +231,8 @@ Route::middleware(['auth','role:admin'])->group(function () {
 // });
 
 
+Route::get('/executive', [AdministrativeController::class, 'executive'])->name('executive');
+Route::get('/governing_body', [AdministrativeController::class, 'governingBody'])->name('governing_body');
+Route::get('/adviser', [AdministrativeController::class, 'adviser'])->name('adviser');
+
 Route::get('/{slug}',[PageController::class,'page'])->name('page');
-Route::get('administrative/{type}', [AdministrativeController::class, 'index'])->name('administrative');
