@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Backend\WebInfoController;
+use App\Http\Controllers\Frontend\AdministrativeController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageContentController;
 use App\Http\Controllers\ProfileController;
@@ -231,4 +232,4 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
 
 Route::get('/{slug}',[PageController::class,'page'])->name('page');
-// Route::get('/executive', [PageContentController::class, 'executive']);
+Route::get('administrative/{type}', [AdministrativeController::class, 'index'])->name('administrative');
