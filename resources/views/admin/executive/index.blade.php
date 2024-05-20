@@ -27,6 +27,7 @@
                     <thead >
                     <tr>
                         <th>#</th>
+                        <th>Photo</th>
                         <th>Name</th>
                         <th>Designation</th>
                         <th>Actions</th>
@@ -36,6 +37,9 @@
                         @foreach ($executives as $executive)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
+                                <td>
+                                    <img src="{{asset($executive->photo)}}" class="img-thumbnail" style="width: 120px" alt="">
+                                </td>
                                 <td>{{$executive->name}}</td>
                                 <td>{{$executive->designation}}</td>
                           

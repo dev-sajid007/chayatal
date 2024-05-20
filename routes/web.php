@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Backend\WebInfoController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PageContentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -177,6 +178,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::post('/status',[GalleryController::class, 'status'])->name('status');
           
             });
+            
 
             Route::group(['as'=>'sponsor.','prefix'=>'sponsor'],function(){
 
@@ -200,7 +202,6 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[EventController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/status',[EventController::class, 'status'])->name('status');
-          
             });
 
 
@@ -214,10 +215,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[WebInfoController::class, 'delete'])->name('delete');
     
             });
-
         });
-
-
     });
    
     
@@ -232,4 +230,5 @@ Route::middleware(['auth','role:admin'])->group(function () {
 // });
 
 
-Route::get('{slug}',[PageController::class,'page'])->name('page');
+Route::get('/{slug}',[PageController::class,'page'])->name('page');
+// Route::get('/executive', [PageContentController::class, 'executive']);

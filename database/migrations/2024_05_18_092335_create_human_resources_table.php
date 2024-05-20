@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('designation');
+            $table->string('photo')->nullable();
             $table->enum('type', ['executive', 'governing_body', 'adviser']);
             $table->timestamps();
         });

@@ -9,5 +9,5 @@ class HumanResource extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'name', 'designation', 'type'];
+    protected $fillable = ['id', 'name', 'designation', 'photo', 'type'];
 }

@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\HumanResource;
 use Illuminate\Http\Request;
+use App\Http\Traits\ImageSaver;
+use Illuminate\Support\Facades\File;
 
 class ExecutiveController extends Controller
 {
+    use ImageSaver;
     /**
      * Display a listing of the resource.
      */
@@ -33,14 +36,19 @@ class ExecutiveController extends Controller
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
+            'photo' => 'required'
         ]);
 
 
-        HUmanResource::create([
+        $executive = HUmanResource::create([
             'name' => $request->name,
             'designation' => $request->designation,
             'type' => 'executive'
         ]);
+
+        if ($request->hasFile('photo')) {
+            $this->upload_file($request->file('photo'), $executive, 'photo', 'executive');
+        }
 
         $notification = array(
             'message' => 'Executive Create Successfully ',
@@ -78,11 +86,17 @@ class ExecutiveController extends Controller
         ]);
 
         $executive = HUmanResource::where('type', 'executive')->where('id', $id)->first();
+
         $executive->update([
             'name' => $request->name,
             'designation' => $request->designation,
             'type' => 'executive'
         ]);
+
+
+        if ($request->hasFile('photo')) {
+            $this->upload_file($request->file('photo'), $executive, 'photo', 'executive');
+        }
 
         $notification = array(
             'message' => 'Executive Update Successfully ',
@@ -98,6 +112,13 @@ class ExecutiveController extends Controller
     public function delete(string $id)
     {
         $executive = HUmanResource::where('type', 'executive')->where('id', $id)->first();
+
+        if($executive->photo){
+            if (File::exists($executive->photo)) {
+                File::delete($executive->photo);
+            }
+        }
+
         $executive->delete();
 
         $notification = array(
