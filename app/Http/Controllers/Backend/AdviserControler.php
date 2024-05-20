@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\HumanResource;
 use Illuminate\Http\Request;
+use App\Http\Traits\ImageSaver;
+use Illuminate\Support\Facades\File;
 
 class AdviserControler extends Controller
 {
+    use ImageSaver;
     /**
      * Display a listing of the resource.
      */
@@ -33,14 +36,20 @@ class AdviserControler extends Controller
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
+            'photo'  => 'required'
         ]);
 
 
-        HUmanResource::create([
+       $adviser = HUmanResource::create([
             'name' => $request->name,
             'designation' => $request->designation,
             'type' => 'adviser'
         ]);
+
+
+        if ($request->hasFile('photo')) {
+            $this->upload_file($request->file('photo'), $adviser, 'photo', 'adviser');
+        }
 
         $notification = array(
             'message' => 'Adviser Added Successfully',
@@ -85,6 +94,11 @@ class AdviserControler extends Controller
             'type' => 'adviser'
         ]);
 
+
+        if ($request->hasFile('photo')) {
+            $this->upload_file($request->file('photo'), $adviser, 'photo', 'adviser');
+        }
+
         $notification = array(
             'message' => 'Adviser Updated Successfully',
             'alert-type' => 'success'
@@ -99,6 +113,13 @@ class AdviserControler extends Controller
     public function delete(string $id)
     {
         $adviser = HUmanResource::where('type', 'adviser')->where('id', $id)->first();
+
+        if($adviser->photo){
+            if (File::exists($adviser->photo)) {
+                File::delete($adviser->photo);
+            }
+        }
+        
         $adviser->delete();
 
         $notification = array(

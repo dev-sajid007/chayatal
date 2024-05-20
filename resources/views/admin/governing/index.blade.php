@@ -2,6 +2,13 @@
 
 @push('css')
     <link href="{{asset('backend/admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
+    <style>
+        .table td {
+            vertical-align: middle;
+        }
+    </style>
+    
 @endpush
 
 @section('content')
@@ -27,6 +34,7 @@
                     <thead >
                     <tr>
                         <th>#</th>
+                        <th>Photo</th>
                         <th>Name</th>
                         <th>Designation</th>
                         <th>Actions</th>
@@ -36,6 +44,9 @@
                         @foreach ($governings as $governing)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
+                                <td>
+                                    <img src="{{asset($governing->photo)}}" class="img-thumbnail" style="width: 120px" alt="">
+                                </td>
                                 <td>{{$governing->name}}</td>
                                 <td>{{$governing->designation}}</td>
                                 <td>

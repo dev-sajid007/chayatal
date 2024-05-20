@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\HumanResource;
 use Illuminate\Http\Request;
+use App\Http\Traits\ImageSaver;
+use Illuminate\Support\Facades\File;
 
 class GoverningBodyController extends Controller
 {
+    use ImageSaver;
     /**
      * Display a listing of the resource.
      */
@@ -33,14 +36,21 @@ class GoverningBodyController extends Controller
         $request->validate([
             'name' => 'required',
             'designation' => 'required',
+            'photo' => 'required'
         ]);
 
 
-        HUmanResource::create([
+       $governingBody = HUmanResource::create([
             'name' => $request->name,
             'designation' => $request->designation,
             'type' => 'governing_body'
         ]);
+
+
+        if ($request->hasFile('photo')) {
+            $this->upload_file($request->file('photo'), $governingBody, 'photo', 'governingBody');
+        }
+
 
         $notification = array(
             'message' => 'Governing Body Added Successfully',
@@ -81,11 +91,16 @@ class GoverningBodyController extends Controller
         ]);
 
         $governing = HUmanResource::where('type', 'governing_body')->where('id', $id)->first();
+
         $governing->update([
             'name' => $request->name,
             'designation' => $request->designation,
             'type' => 'governing_body'
         ]);
+
+        if ($request->hasFile('photo')) {
+            $this->upload_file($request->file('photo'), $governing, 'photo', 'governingBody');
+        }
 
         $notification = array(
             'message' => 'Governing Body Update Successfully ',
@@ -101,6 +116,14 @@ class GoverningBodyController extends Controller
     public function delete(string $id)
     {
         $governing_body = HUmanResource::where('type', 'governing_body')->where('id', $id)->first();
+
+        if($governing_body->photo){
+            if (File::exists($governing_body->photo)) {
+                File::delete($governing_body->photo);
+            }
+        }
+
+
         $governing_body->delete();
 
         $notification = array(

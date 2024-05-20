@@ -2,6 +2,11 @@
 
 @push('css')
     <link href="{{asset('backend/admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <style>
+        .table td {
+            vertical-align: middle;
+        }
+    </style>
 @endpush
 
 @section('content')

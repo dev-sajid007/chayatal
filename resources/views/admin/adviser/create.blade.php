@@ -33,7 +33,7 @@
                             class="fa fa-arrow-left"></i> Back</a>
                 </div>
                 <form method="POST"
-                    action="{{ isset($adviser) ? route('admin.adviser.update', $adviser->id) : route('admin.adviser.store') }}">
+                    action="{{ isset($adviser) ? route('admin.adviser.update', $adviser->id) : route('admin.adviser.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-8 float-left">
@@ -61,15 +61,29 @@
                                             </span>
                                         @enderror
                                     </div>
+                                </div>
 
-                                    <div class="form-group col-12 col-md-6">
+                                <div class="card-body pt-0 row">
+                                    <div class="form-group col-12">
+                                        <label for="photo">Photo</label>
+                                        <input type="file" class="form-control dropify @error('photo') is-invalid @enderror" data-default-file="{{isset($adviser->photo) ? asset($adviser->photo) : ''}}"  name="photo" data-height="235" />
+                                        @error('photo')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-12">
                                         <button type="submit" class="btn btn-primary mt-3">
                                             <i class="fa fa-save"></i>
-                                            @if (@$adviser)
+                                          
+                                            @if (@$executive)
                                              Update
                                             @else
                                              Submit
                                             @endif
+                                            
                                        </button>
                                     </div>
                                 </div>

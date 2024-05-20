@@ -65,7 +65,7 @@
                         </div>
     
                         <div class="form-row mt-3">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label for="">Content</label>
                                 <textarea name="content" class="@error('slug') is-invalid @enderror" id="summernote" cols="30" rows="10">{{ @$page->content }}</textarea>
                                 @error('content')
@@ -73,16 +73,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                            <div class="col-md-6">
-                                <label for="">Image</label>
-                                <input type="file" name="image" class="dropify">
-                                @isset($page)
-                                    <h5 class="m-2">Old Image</h5>
-                                    <img width="80" class="img-thumbnail"
-                                        src="{{asset($page->image)}}"
-                                        alt="Page Image">
-                                @endisset
                             </div>
                         </div>
     
