@@ -8,9 +8,21 @@ use Illuminate\Http\Request;
 
 class AdministrativeController extends Controller
 {
-    public function index($type)
+    public function adviser()
     {
-        $datas = HumanResource::where('type', $type)->get();
+        $datas = HumanResource::where('type', 'adviser')->get();
+        return view('frontend.page.administrative', compact('datas'));
+    }
+
+    public function executive()
+    {
+        $datas = HumanResource::where('type', 'executive')->get();
+        return view('frontend.page.administrative', compact('datas'));
+    }
+
+    public function governingBody()
+    {
+        $datas = HumanResource::where('type', 'governing_body')->get();
         return view('frontend.page.administrative', compact('datas'));
     }
 }

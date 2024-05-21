@@ -5,7 +5,7 @@
 <section class="welcome-section section-padding">
     <div class="container">
         <div class="welcome-title text-center">
-            <div class="section-title"><h2>{{$page}}</h2></div>
+            <div class="section-title"><h2>{{$page->title}}</h2></div>
             <div class="title"><p></p></div>
         </div>
         <div class="row">

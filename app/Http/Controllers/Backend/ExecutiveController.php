@@ -47,7 +47,7 @@ class ExecutiveController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
-            $this->upload_file($request->file('photo'), $executive, 'photo', 'executive');
+            $this->uploadFileWithResize($request->file('photo'), $executive, 'photo', 'executive', 270, 270);
         }
 
         $notification = array(
@@ -95,7 +95,7 @@ class ExecutiveController extends Controller
 
 
         if ($request->hasFile('photo')) {
-            $this->upload_file($request->file('photo'), $executive, 'photo', 'executive');
+            $this->uploadFileWithResize($request->file('photo'), $executive, 'photo', 'executive', 270, 270);
         }
 
         $notification = array(

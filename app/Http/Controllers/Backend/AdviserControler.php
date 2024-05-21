@@ -48,7 +48,7 @@ class AdviserControler extends Controller
 
 
         if ($request->hasFile('photo')) {
-            $this->upload_file($request->file('photo'), $adviser, 'photo', 'adviser');
+            $this->uploadFileWithResize($request->file('photo'), $adviser, 'photo', 'adviser', 270, 270);
         }
 
         $notification = array(
@@ -96,7 +96,7 @@ class AdviserControler extends Controller
 
 
         if ($request->hasFile('photo')) {
-            $this->upload_file($request->file('photo'), $adviser, 'photo', 'adviser');
+            $this->uploadFileWithResize($request->file('photo'), $adviser, 'photo', 'adviser', 270, 270);
         }
 
         $notification = array(

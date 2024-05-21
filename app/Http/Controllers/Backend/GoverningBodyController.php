@@ -40,7 +40,7 @@ class GoverningBodyController extends Controller
         ]);
 
 
-       $governingBody = HUmanResource::create([
+       $governing = HUmanResource::create([
             'name' => $request->name,
             'designation' => $request->designation,
             'type' => 'governing_body'
@@ -48,7 +48,7 @@ class GoverningBodyController extends Controller
 
 
         if ($request->hasFile('photo')) {
-            $this->upload_file($request->file('photo'), $governingBody, 'photo', 'governingBody');
+            $this->uploadFileWithResize($request->file('photo'), $governing, 'photo', 'governingBody', 270, 270);
         }
 
 
@@ -99,7 +99,7 @@ class GoverningBodyController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
-            $this->upload_file($request->file('photo'), $governing, 'photo', 'governingBody');
+            $this->uploadFileWithResize($request->file('photo'), $governing, 'photo', 'governingBody', 270, 270);
         }
 
         $notification = array(
