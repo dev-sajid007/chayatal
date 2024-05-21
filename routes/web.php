@@ -231,5 +231,5 @@ Route::middleware(['auth','role:admin'])->group(function () {
 // });
 
 
-Route::get('/{slug}',[PageController::class,'page'])->name('page');
 Route::get('administrative/{type}', [AdministrativeController::class, 'index'])->name('administrative');
+Route::get('/{slug}',[PageController::class,'page'])->name('page');
