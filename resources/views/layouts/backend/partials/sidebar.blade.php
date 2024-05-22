@@ -61,6 +61,7 @@
                 <a class="collapse-item {{(Request::is('admin/website/sponsor*'))?'active':''}}" href="{{route('admin.website.sponsor.index')}}">Sponsor </a>
                 <a class="collapse-item {{(Request::is('admin/website/event*'))?'active':''}}" href="{{route('admin.website.event.index')}}">Event </a>
                 <a class="collapse-item {{(Request::is('admin/website/news*'))?'active':''}}" href="{{route('admin.website.news.index')}}">News </a>
+                <a class="collapse-item {{(Request::is('admin/website/footer*'))?'active':''}}" href="{{route('admin.website.footer.index')}}">Footer Content </a>
                 <a class="collapse-item {{(Request::is('admin/website/web-info*'))?'active':''}}" href="{{route('admin.website.web-info.index')}}">Web Info </a>
             </div>
         </div>

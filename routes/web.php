@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\ExecutiveController;
+use App\Http\Controllers\Backend\FooterContentController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\GoverningBodyController;
 use App\Http\Controllers\Backend\MenuController;
@@ -217,6 +218,14 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[NewsController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/status',[NewsController::class, 'status'])->name('status');
+            });
+
+
+            Route::group(['as'=>'footer.','prefix'=>'footer'],function(){
+
+                Route::get('/',[FooterContentController::class, 'index'])->name('index');
+                Route::post('/update',[FooterContentController::class, 'update'])->name('update');
+
             });
 
 

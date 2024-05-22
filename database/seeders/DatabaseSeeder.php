@@ -31,5 +31,6 @@ class DatabaseSeeder extends Seeder
         $this->call(WebInfoSeeder::class);
         $this->call(ExecutiveSeeder::class);
         $this->call(NewsSeeder::class);
+        $this->call(FooterContentSeeder::class);
     }
 }
