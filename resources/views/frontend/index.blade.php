@@ -492,75 +492,31 @@
                 <div class="title"><p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p></div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <figure><a href="single-blog.html"><img src="{{asset('frontend/images/news/1.jpg')}}" alt=""></a></figure>
+
+                @foreach ($newses as $news)
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-item">
+                            <div class="img-box">
+                                <div class="img-holder">
+                                    <figure><a href="single-blog.html"><img src="{{asset($news->photo)}}" alt=""></a></figure>
+                                </div>
+                                {{-- <ul class="img-content text-center">
+                                    <li><i class="fa fa-calendar" aria-hidden="true"></i>20 Jan, 2017</li>
+                                    <li><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>350 Likes</li>
+                                    <li><i class="fa fa-comments-o" aria-hidden="true"></i>75 Comments</li>
+                                </ul> --}}
                             </div>
-                            <ul class="img-content text-center">
-                                <li><i class="fa fa-calendar" aria-hidden="true"></i>20 Jan, 2017</li>
-                                <li><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>350 Likes</li>
-                                <li><i class="fa fa-comments-o" aria-hidden="true"></i>75 Comments</li>
-                            </ul>
-                        </div>
-                        <div class="news-content">
-                            <h4><a href="single-blog.html">Heart to Heart Event</a></h4>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet consectetur adip
-                                sicing elit sed do eiusmod temporincididunt.
-                                Labore dolore magna aliqua. </p>
+                            <div class="news-content">
+                                <h4><a href="single-blog.html">{{$news->title}}</a></h4>
+                                <div class="text">
+                                    <p>{{$news->description}}</p>
+                                </div>
+                                <a href="#" class="btn-two">Read More</a>
                             </div>
-                            <a href="#" class="btn-two">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <figure><a href="single-blog.html"><img src="{{asset('frontend/images/news/2.jpg')}}" alt=""></a></figure>
-                            </div>
-                            <ul class="img-content text-center">
-                                <li><i class="fa fa-calendar" aria-hidden="true"></i>20 Jan, 2017</li>
-                                <li><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>350 Likes</li>
-                                <li><i class="fa fa-comments-o" aria-hidden="true"></i>75 Comments</li>
-                            </ul>
-                        </div>
-                        <div class="news-content">
-                            <h4><a href="single-blog.html">Heart to Heart Event</a></h4>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet consectetur adip
-                                sicing elit sed do eiusmod temporincididunt.
-                                Labore dolore magna aliqua. </p>
-                            </div>
-                            <a href="#" class="btn-two">Read More</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-box">
-                            <div class="img-holder">
-                                <figure><a href="single-blog.html"><img src="{{asset('frontend/images/news/3.jpg')}}" alt=""></a></figure>
-                            </div>
-                            <ul class="img-content text-center">
-                                <li><i class="fa fa-calendar" aria-hidden="true"></i>20 Jan, 2017</li>
-                                <li><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>350 Likes</li>
-                                <li><i class="fa fa-comments-o" aria-hidden="true"></i>75 Comments</li>
-                            </ul>
-                        </div>
-                        <div class="news-content">
-                            <h4><a href="single-blog.html">Heart to Heart Event</a></h4>
-                            <div class="text">
-                                <p>Lorem ipsum dolor sit amet consectetur adip
-                                sicing elit sed do eiusmod temporincididunt.
-                                Labore dolore magna aliqua. </p>
-                            </div>
-                            <a href="#" class="btn-two">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
     </section>

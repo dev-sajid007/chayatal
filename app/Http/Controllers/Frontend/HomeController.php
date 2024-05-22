@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Menu;
+use App\Models\News;
 use App\Models\Sponsor;
 use App\Models\Testimonial;
 use App\Models\WebInfo;
@@ -23,6 +24,7 @@ class HomeController extends Controller
         $data['info']         = WebInfo::find(1);
         $data['menus']        = Menu::with('childs')->whereNull('parent_id')->get();
         $data['events']       = Event::where('status',true)->get();
+        $data['newses']         = News::where('status',true)->get();
         //dd($data['menus']->toArray());
         return view('frontend.index',$data);
     }
