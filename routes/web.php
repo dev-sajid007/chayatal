@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ExecutiveController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\GoverningBodyController;
 use App\Http\Controllers\Backend\MenuController;
+use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\SponsorController;
 use App\Http\Controllers\Backend\TagController;
@@ -203,6 +204,19 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/delete/{id}',[EventController::class, 'delete'])->name('delete');
                 //ajax route
                 Route::post('/status',[EventController::class, 'status'])->name('status');
+            });
+
+
+            Route::group(['as'=>'news.','prefix'=>'news'],function(){
+
+                Route::get('/',[NewsController::class, 'index'])->name('index');
+                Route::get('/create',[NewsController::class, 'create'])->name('create');
+                Route::post('/store',[NewsController::class, 'store'])->name('store');
+                Route::get('/edit/{id}',[NewsController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}',[NewsController::class, 'update'])->name('update');
+                Route::get('/delete/{id}',[NewsController::class, 'delete'])->name('delete');
+                //ajax route
+                Route::post('/status',[NewsController::class, 'status'])->name('status');
             });
 
 
