@@ -509,7 +509,7 @@
                             <div class="news-content">
                                 <h4><a href="single-blog.html">{{$news->title}}</a></h4>
                                 <div class="text">
-                                    <p>{{$news->description}}</p>
+                                    <p>{!! $news->description !!}</p>
                                 </div>
                                 <a href="#" class="btn-two">Read More</a>
                             </div>
