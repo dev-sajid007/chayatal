@@ -20,6 +20,7 @@
                 </form>
             </div>
         </div> --}}
+
         <div class="main-footer">
             <div class="row">
                 <div class="footer-column col-md-3 col-sm-6 col-xs-12">
@@ -38,11 +39,9 @@
                     <div class="link-widget">
                         <h4>Quick Links</h4>
                         <ul class="list">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="causes-details.html">Causes</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="single-volunteer.html">Volunteers</a></li>
-                            <li><a href="single-blog.html">Latest News</a></li>
+                            @foreach ($data['menus'] as $menu)
+                                <li><a href="{{$menu->url ? $menu->url : '#' }}">{{$menu->title}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

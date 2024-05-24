@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.frontend.partials.footer', function ($view) {
             $data['galleries'] = Gallery::where('status',1)->get()->take(6);
             $data['footer']    = FooterContent::first();
+            $data['menus']      = Menu::whereNull('parent_id')->get();
             $view->with('data', $data);
         });
 
