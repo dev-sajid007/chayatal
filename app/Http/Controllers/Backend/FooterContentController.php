@@ -29,12 +29,23 @@ class FooterContentController extends Controller
 
 
         $footer = FooterContent::first();
-        $footer->update([
-            'about' => $request->about,
-            'address' => $request->address,
-            'phone' => $request->phone,
-            'email' => $request->email
-        ]);
+        if($footer){
+            $footer->update([
+                'about' => $request->about,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'email' => $request->email
+            ]);
+        }
+        else{
+            FooterContent::create([
+                'about' => $request->about,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'email' => $request->email
+            ]);
+        }
+        
 
         if ($request->hasFile('logo')) {
             $this->uploadFileWithResize($request->file('logo'), $footer, 'logo', 'footer', 228, 78);
