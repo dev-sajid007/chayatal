@@ -37,7 +37,7 @@ class FooterContentController extends Controller
         ]);
 
         if ($request->hasFile('logo')) {
-            $this->upload_file($request->file('logo'), $footer, 'logo', 'footer');
+            $this->uploadFileWithResize($request->file('logo'), $footer, 'logo', 'footer', 228, 78);
         }
 
         $notification = array(

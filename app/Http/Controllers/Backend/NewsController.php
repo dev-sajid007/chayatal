@@ -59,7 +59,7 @@ class NewsController extends Controller
         $news->save();
         
         if ($request->hasFile('photo')) {
-            $this->uploadFileWithResize($request->file('photo'), $news, 'photo', 'news', 3701, 250);
+            $this->uploadFileWithResize($request->file('photo'), $news, 'photo', 'news', 370, 250);
         }
 
         $notification = array(
@@ -104,7 +104,7 @@ class NewsController extends Controller
         $news->update();
         
         if ($request->hasFile('photo')) {
-            $this->uploadFileWithResize($request->file('photo'), $news, 'photo', 'news', 3701, 250);
+            $this->uploadFileWithResize($request->file('photo'), $news, 'photo', 'news', 370, 250);
         }
 
         $notification = array(
