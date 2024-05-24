@@ -26,7 +26,6 @@ class HomeController extends Controller
         $data['menus']        = Menu::with('childs')->whereNull('parent_id')->get();
         $data['events']       = Event::where('status',true)->get();
         $data['newses']       = News::where('status',true)->get();
-        $data['footer']       = FooterContent::first();
         //dd($data['menus']->toArray());
         return view('frontend.index',$data);
     }

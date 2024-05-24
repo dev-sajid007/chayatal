@@ -511,7 +511,7 @@
                                 <div class="text">
                                     <p>{!! $news->description !!}</p>
                                 </div>
-                                <a href="#" class="btn-two">Read More</a>
+                                <a href="{{route('admin.website.news.show', $news->id)}}" class="btn-two">Read More</a>
                             </div>
                         </div>
                     </div>

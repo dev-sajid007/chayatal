@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\FooterContent;
+use App\Models\Gallery;
 use App\Models\Menu;
 use App\Models\WebInfo;
 use Illuminate\Support\Facades\View;
@@ -25,6 +27,12 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.frontend.app', function ($view) {
             $info        = WebInfo::find(1);
             $view->with('info', $info);
+        });
+
+        View::composer('layouts.frontend.partials.footer', function ($view) {
+            $data['galleries'] = Gallery::where('status',1)->get()->take(6);
+            $data['footer']    = FooterContent::first();
+            $view->with('data', $data);
         });
 
         View::composer('layouts.frontend.partials.header', function ($view) {

@@ -25,11 +25,11 @@
                 <div class="footer-column col-md-3 col-sm-6 col-xs-12">
                     <div class="logo-widget">
                         <div class="footer-logo">
-                            <figure><a href="index.html"><img src="{{asset(@$footer->logo)}}"
+                            <figure><a href="index.html"><img src="{{asset($data['footer']->logo)}}"
                                         alt=""></a></figure>
                         </div>
                         <div class="text">
-                            <p>{{@$footer->about}}</p>
+                            <p>{{$data['footer']->about}}</p>
                         </div>
                         <a href="contact.html">Contact us</a>
                     </div>
@@ -46,14 +46,13 @@
                         </ul>
                     </div>
                 </div>
+        
                 <div class="footer-colmun col-md-4 col-sm-6 col-xs-12">
                     <div class="gallery-widget">
-                        @php
-                            $galleries = $galleries->take(6);
-                        @endphp
                         <h4>Our Gallery</h4>
+                    
                         <ul class="img-list">
-                            @foreach ($galleries as $gallery)
+                            @foreach ($data['galleries'] as $gallery)
                                 <li>
                                     <a href="{{ asset($gallery->image) }}">
                                         <figure><img style="width: 83px; hight: 83px" src="{{ asset($gallery->photo) }}" alt=""></figure>
@@ -68,19 +67,19 @@
                     <div class="contact-widget">
                         <h4>contact us</h4>
                         <div class="text">
-                            <p>{{@$footer->about}}</p>
+                            <p>{{$data['footer']->about}}</p>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-home" aria-hidden="true"></i></div>
-                            <div class="text">{{@$footer->address}}</div>
+                            <div class="text">{{$data['footer']->address}}</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-phone"></i></div>
-                            <div class="text">{{@$footer->phone}}</div>
+                            <div class="text">{{$data['footer']->phone}}</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                            <div class="mail"><a href="#">{{@$footer->email}}</a></div>
+                            <div class="mail"><a href="#">{{$data['footer']->email}}</a></div>
                         </div>
                     </div>
                 </div>
