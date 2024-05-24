@@ -87,7 +87,7 @@
         </div>
         <div class="footer-bottom text-center">
             <div class="text">
-                <p>Copyright © copy <a href="#">Chayatal</a> 2024. All Rights Reserved</p>
+                <p>Copyright © copy <a href="#">Chayatal</a> {{date('Y')}}. All Rights Reserved</p>
             </div>
         </div>
     </div>
