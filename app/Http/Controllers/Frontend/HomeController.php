@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Event;
+use App\Models\FooterContent;
 use App\Models\Gallery;
 use App\Models\Menu;
 use App\Models\News;
@@ -24,7 +25,8 @@ class HomeController extends Controller
         $data['info']         = WebInfo::find(1);
         $data['menus']        = Menu::with('childs')->whereNull('parent_id')->get();
         $data['events']       = Event::where('status',true)->get();
-        $data['newses']         = News::where('status',true)->get();
+        $data['newses']       = News::where('status',true)->get();
+        $data['footer']       = FooterContent::first();
         //dd($data['menus']->toArray());
         return view('frontend.index',$data);
     }

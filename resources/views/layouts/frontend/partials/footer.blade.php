@@ -1,6 +1,6 @@
 <footer class="main-footer-area">
     <div class="container">
-        <div class="footer-top-area">
+        {{-- <div class="footer-top-area">
             <ul class="footer-socila">
                 <li>
                     <h4>Connect With Us:</h4>
@@ -19,18 +19,17 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
         <div class="main-footer">
             <div class="row">
                 <div class="footer-column col-md-3 col-sm-6 col-xs-12">
                     <div class="logo-widget">
                         <div class="footer-logo">
-                            <figure><a href="index.html"><img src="{{asset('frontend/images/footer/logo.png')}}"
+                            <figure><a href="index.html"><img src="{{asset(@$footer->logo)}}"
                                         alt=""></a></figure>
                         </div>
                         <div class="text">
-                            <p>Currently, Chayatal is caring for 136 girls and 113 boys, aged between 5 and 15 years, hailing from various districts of Bangladesh.
-                                 Every morning around 8:30, these children arrive at the Chayatal campus from nearby areas.</p>
+                            <p>{{@$footer->about}}</p>
                         </div>
                         <a href="contact.html">Contact us</a>
                     </div>
@@ -49,32 +48,19 @@
                 </div>
                 <div class="footer-colmun col-md-4 col-sm-6 col-xs-12">
                     <div class="gallery-widget">
+                        @php
+                            $galleries = $galleries->take(6);
+                        @endphp
                         <h4>Our Gallery</h4>
                         <ul class="img-list">
-                            <li><a href="gallery.html">
-                                    <figure><img src="{{ asset('frontend/images/footer/1.jpg') }}"
-                                            alt=""></figure>
-                                </a></li>
-                            <li><a href="gallery.html">
-                                    <figure><img src="{{ asset('frontend/images/footer/2.jpg') }}"
-                                            alt=""></figure>
-                                </a></li>
-                            <li><a href="gallery.html">
-                                    <figure><img src="{{ asset('frontend/images/footer/3.jpg') }}"
-                                            alt=""></figure>
-                                </a></li>
-                            <li><a href="gallery.html">
-                                    <figure><img src="{{ asset('frontend/images/footer/4.jpg') }}"
-                                            alt=""></figure>
-                                </a></li>
-                            <li><a href="gallery.html">
-                                    <figure><img src="{{ asset('frontend/images/footer/5.jpg') }}"
-                                            alt=""></figure>
-                                </a></li>
-                            <li><a href="gallery.html">
-                                    <figure><img src="{{ asset('frontend/images/footer/6.jpg') }}"
-                                            alt=""></figure>
-                                </a></li>
+                            @foreach ($galleries as $gallery)
+                                <li>
+                                    <a href="{{ asset($gallery->image) }}">
+                                        <figure><img style="width: 83px; hight: 83px" src="{{ asset($gallery->photo) }}" alt=""></figure>
+                                    </a>
+                                </li>
+                            @endforeach
+                            
                         </ul>
                     </div>
                 </div>
@@ -82,19 +68,19 @@
                     <div class="contact-widget">
                         <h4>contact us</h4>
                         <div class="text">
-                            <p>We aspire to establish a secure society where children are healthy and well-educated.</p>
+                            <p>{{@$footer->about}}</p>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-home" aria-hidden="true"></i></div>
-                            <div class="text">37/1 - A, Johuri Moholla, Shyamoli, Mohammadpur, Dhaka-1207.</div>
+                            <div class="text">{{@$footer->address}}</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-phone"></i></div>
-                            <div class="text">+880 1713-391333</div>
+                            <div class="text">{{@$footer->phone}}</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                            <div class="mail"><a href="#">chayatalbd@gmail.com</a></div>
+                            <div class="mail"><a href="#">{{@$footer->email}}</a></div>
                         </div>
                     </div>
                 </div>
