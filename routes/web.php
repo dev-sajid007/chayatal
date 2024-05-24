@@ -216,7 +216,6 @@ Route::middleware(['auth','role:admin'])->group(function () {
                 Route::get('/edit/{id}',[NewsController::class, 'edit'])->name('edit');
                 Route::post('/update/{id}',[NewsController::class, 'update'])->name('update');
                 Route::get('/delete/{id}',[NewsController::class, 'delete'])->name('delete');
-                Route::get('/show/{id}',[NewsController::class, 'show'])->name('show');
                 //ajax route
                 Route::post('/status',[NewsController::class, 'status'])->name('status');
             });
@@ -254,7 +253,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
     
 // });
 
-
+Route::get('/news/{id}',[NewsController::class, 'show'])->name('news.show');
 Route::get('/executive', [AdministrativeController::class, 'executive'])->name('executive');
 Route::get('/governing_body', [AdministrativeController::class, 'governingBody'])->name('governing_body');
 Route::get('/adviser', [AdministrativeController::class, 'adviser'])->name('adviser');
