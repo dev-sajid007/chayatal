@@ -32,7 +32,7 @@
                         <div class="text">
                             <p>{{$data['footer']->about}}</p>
                         </div>
-                        <a href="contact.html">Contact us</a>
+                        {{-- <a href="contact.html">Contact us</a> --}}
                     </div>
                 </div>
                 <div class="footer-column col-md-2 col-sm-6 col-xs-12">
@@ -64,7 +64,7 @@
                 </div>
                 <div class="footer-colmun col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-widget">
-                        <h4>contact us</h4>
+                        <h4>Contact us</h4>
                         <div class="text">
                             <p>{{$data['footer']->about}}</p>
                         </div>
