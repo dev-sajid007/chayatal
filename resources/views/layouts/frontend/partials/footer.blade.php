@@ -21,9 +21,9 @@
             </div>
         </div> --}}
 
-        <div class="main-footer">
+        <div class="main-footer" style="padding-top: 0px;">
             <div class="row">
-                <div class="footer-column col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-column col-md-3 col-sm-6 col-xs-12" style="padding-top: 28px !important;">
                     <div class="logo-widget">
                         <div class="footer-logo">
                             <figure><a href="index.html"><img src="{{asset(@$data['footer']->logo)}}"
