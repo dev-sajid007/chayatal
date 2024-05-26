@@ -21,16 +21,16 @@
             </div>
         </div> --}}
 
-        <div class="main-footer">
+        <div class="main-footer" style="padding-top: 0px;">
             <div class="row">
-                <div class="footer-column col-md-3 col-sm-6 col-xs-12">
+                <div class="footer-column col-md-3 col-sm-6 col-xs-12" style="padding-top: 28px !important;">
                     <div class="logo-widget">
                         <div class="footer-logo">
-                            <figure><a href="index.html"><img src="{{asset($data['footer']->logo)}}"
+                            <figure><a href="index.html"><img src="{{asset(@$data['footer']->logo)}}"
                                         alt=""></a></figure>
                         </div>
                         <div class="text">
-                            <p>{{$data['footer']->about}}</p>
+                            <p>{{@$data['footer']->about}}</p>
                         </div>
                         {{-- <a href="contact.html">Contact us</a> --}}
                     </div>
@@ -39,7 +39,7 @@
                     <div class="link-widget">
                         <h4>Quick Links</h4>
                         <ul class="list">
-                            @foreach ($data['menus'] as $menu)
+                            @foreach (@$data['menus'] as $menu)
                                 <li><a href="{{$menu->url ? $menu->url : '#' }}">{{$menu->title}}</a></li>
                             @endforeach
                         </ul>
@@ -51,10 +51,10 @@
                         <h4>Our Gallery</h4>
                     
                         <ul class="img-list">
-                            @foreach ($data['galleries'] as $gallery)
+                            @foreach (@$data['galleries'] as $gallery)
                                 <li>
-                                    <a href="{{ asset($gallery->image) }}">
-                                        <figure><img style="width: 83px; hight: 83px" src="{{ asset($gallery->photo) }}" alt=""></figure>
+                                    <a href="#">
+                                        <figure><img style="width: 83px; hight: 83px" src="{{ asset(@$gallery->photo) }}" alt=""></figure>
                                     </a>
                                 </li>
                             @endforeach
@@ -66,19 +66,19 @@
                     <div class="contact-widget">
                         <h4>Contact us</h4>
                         <div class="text">
-                            <p>{{$data['footer']->about}}</p>
+                            <p>{{@$data['footer']->about}}</p>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-home" aria-hidden="true"></i></div>
-                            <div class="text">{{$data['footer']->address}}</div>
+                            <div class="text">{{@$data['footer']->address}}</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-phone"></i></div>
-                            <div class="text">{{$data['footer']->phone}}</div>
+                            <div class="text">{{@$data['footer']->phone}}</div>
                         </div>
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                            <div class="mail"><a href="#">{{$data['footer']->email}}</a></div>
+                            <div class="mail"><a href="#">{{@$data['footer']->email}}</a></div>
                         </div>
                     </div>
                 </div>
