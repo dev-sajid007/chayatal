@@ -474,14 +474,13 @@
                 <div class="title"><p></p></div>
             </div>
             <ul class="sponsors-slider">
-                
                 @foreach ($sponsors as $sponsor)
                     <li><a href="#"><figure><img src="{{asset($sponsor->photo)}}" alt=""></figure></a></li>
                 @endforeach
-                
             </ul>
         </div>
     </section>
+    
     <!-- sponsors section end -->
 
     <!-- news section -->
@@ -498,7 +497,7 @@
                         <div class="single-item">
                             <div class="img-box">
                                 <div class="img-holder">
-                                    <figure><a href="single-blog.html"><img src="{{asset($news->photo)}}" alt=""></a></figure>
+                                    <figure><a href="{{route('news.show', $news->id)}}"><img src="{{asset($news->photo)}}" alt=""></a></figure>
                                 </div>
                                 {{-- <ul class="img-content text-center">
                                     <li><i class="fa fa-calendar" aria-hidden="true"></i>20 Jan, 2017</li>
