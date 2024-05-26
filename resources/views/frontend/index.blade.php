@@ -506,7 +506,7 @@
                                 </ul> --}}
                             </div>
                             <div class="news-content">
-                                <h4><a href="single-blog.html">{{$news->title}}</a></h4>
+                                <h4><a href="{{route('news.show', $news->id)}}">{{$news->title}}</a></h4>
                                 <div class="text">
                                     <p>{!! $news->description !!}</p>
                                 </div>
