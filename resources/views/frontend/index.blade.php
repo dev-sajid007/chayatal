@@ -459,12 +459,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <label>How much do you want to donate?</label>
-                                    <select class="custom-select-box" id="total_amount">
-                                        <option value="111">1000</option>
-                                        <option value="200">2000</option>
-                                        <option value="300">3000</option>
-                                        <option value="500">5000</option>
-                                    </select>
+                                    <input type="number" name="" value="1000" class="form-control" id="total_amount">
                                 </div>
                             </div>
                             <button type="submit" class="btn-two" id="sslczPayBtn"
