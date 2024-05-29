@@ -163,7 +163,7 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        echo "Transaction is Successful";
+        //echo "Transaction is Successful";
 
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
@@ -201,7 +201,7 @@ class SslCommerzPaymentController extends Controller
             echo "Invalid Transaction";
         }
 
-
+        return view('success');
     }
 
     public function fail(Request $request)
