@@ -65,9 +65,9 @@
                 <div class="footer-colmun col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-widget">
                         <h4>Contact us</h4>
-                        <div class="text">
+                        {{-- <div class="text">
                             <p>{{@$data['footer']->about}}</p>
-                        </div>
+                        </div> --}}
                         <div class="single-item">
                             <div class="icon-box"><i class="fa fa-home" aria-hidden="true"></i></div>
                             <div class="text">{{@$data['footer']->address}}</div>

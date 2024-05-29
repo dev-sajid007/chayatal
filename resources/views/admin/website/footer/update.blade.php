@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="form-group col-12 col-md-4">
                                         <label for="phone">Phone</label>
-                                        <input id="phone" type="number"
+                                        <input id="phone" type="text"
                                             class="form-control @error('phone') is-invalid @enderror" name="phone"
                                             value="{{ @$footer->phone ?? old('phone') }}" autofocus>
                                         @error('phone')

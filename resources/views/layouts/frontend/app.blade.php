@@ -194,7 +194,7 @@
     <script src="{{ asset('frontend/js/map-script.js') }}"></script>
     <script src="{{ asset('frontend/js/script.js') }}"></script>
 
-
+    @stack('js')
     <!-- End of .page_wrapper -->
 </body>
 

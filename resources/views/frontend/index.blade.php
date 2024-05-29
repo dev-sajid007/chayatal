@@ -3,78 +3,76 @@
 @section('content')
     <!--Main Slider-->
     <section class="main-banner banner">
-	    <div class="rev_slider_wrapper">
+        <div class="rev_slider_wrapper">
 
-	        <div id="main_slider" class="rev_slider"  data-version="5.0">
-	        	
-	            <ul>
+            <div id="main_slider" class="rev_slider" data-version="5.0">
+
+                <ul>
                     @forelse ($banners as $banner)
+                        <li data-index='rs-{{ $banner->id }}' class="slide_show slide_1"
+                            data-transition='slidingoverlayright' data-slotamount='default' data-easein='default'
+                            data-easeout='default' data-masterspeed='default' data-rotate='0' data-saveperformance='off'
+                            data-title='Slide Boxes' data-description=''>
 
-                        <li data-index='rs-{{$banner->id}}' class="slide_show slide_1" data-transition='slidingoverlayright' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default' data-rotate='0' data-saveperformance='off' data-title='Slide Boxes' data-description=''>
+                            <img src="{{ asset($banner->photo) }}" alt="" data-bgposition="center center"
+                                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
-                            <img src="{{asset($banner->photo)}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
-
-                            <div class="main_heading tp-caption tp-resizeme"
-                                data-x="left" data-hoffset="0"
-                                data-y="center" data-voffset="-140"
-                                data-whitespace="nowrap"
-                                data-transform_idle="o:1;"
-                                data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"  
-                                data-transform_out="y:[100%];s:1000;s:1000;" 
-                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" 
-                                data-start="2000" 
-                                data-splitin="none" 
-                                data-splitout="none">
-                                <div class="banner-title"><h1>{{$banner->title}}</h1></div>
+                            <div class="main_heading tp-caption tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
+                                data-voffset="-140" data-whitespace="nowrap" data-transform_idle="o:1;"
+                                data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                data-transform_out="y:[100%];s:1000;s:1000;"
+                                data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="2000"
+                                data-splitin="none" data-splitout="none">
+                                <div class="banner-title">
+                                    <h1>{{ $banner->title }}</h1>
+                                </div>
                             </div>
-                            <div class="tp-caption tp-resizeme" 
-                                data-x="left" data-hoffset="0" 
-                                data-y="center" data-voffset="-60" 
-                                data-transform_idle="o:1;"                         
-                                data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;" 
-                                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"                     
-                                data-splitin="none" 
-                                data-splitout="none" 
-                                data-responsive_offset="on"
-                                data-start="2300">
-                                <div class="banner-text"><p>{!!$banner->description!!}</p></div>
+                            <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
+                                data-voffset="-60" data-transform_idle="o:1;"
+                                data-transform_in="x:[175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                data-splitin="none" data-splitout="none" data-responsive_offset="on" data-start="2300">
+                                <div class="banner-text">
+                                    <p>{!! $banner->description !!}</p>
+                                </div>
                             </div>
-                            <div class="tp-caption tp-resizeme" 
-                                data-x="left" data-hoffset="0" 
-                                data-y="center" data-voffset="30" 
-                                data-transform_idle="o:1;"                         
-                                data-transform_in="y:[-1000%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
-                                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"                     
-                                data-splitin="none" 
-                                data-splitout="none" 
-                                data-responsive_offset="on"
-                                data-start="2600">
-                                <button class="donate-box-btn btn-one">{{$banner->button_text}}</button>
+                            <div class="tp-caption tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
+                                data-voffset="30" data-transform_idle="o:1;"
+                                data-transform_in="y:[-1000%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+                                data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                data-splitin="none" data-splitout="none" data-responsive_offset="on" data-start="2600">
+                                <button class="donate-box-btn btn-one">{{ $banner->button_text }}</button>
                             </div>
                         </li>
                     @empty
-                        <li class="text-center"><h1>No Banner Found :)</h1></li>
+                        <li class="text-center">
+                            <h1>No Banner Found :)</h1>
+                        </li>
                     @endforelse
-	              
-	            </ul>
-	        </div>
-	    </div>
+
+                </ul>
+            </div>
+        </div>
     </section>
     <!--Main Slider End-->
 
     <!-- cause section -->
     <section class="our-cause section-padding text-center">
-    	<div class="container">
-    		<div class="cause-title">
-    			<div class="section-title"><h2>Our <span>CAuses</span></h2></div>
-    			<div class="title"><p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p></div>
-    		</div>
+        <div class="container">
+            <div class="cause-title">
+                <div class="section-title">
+                    <h2>Our <span>CAuses</span></h2>
+                </div>
+                <div class="title">
+                    <p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-item">
                         <div class="img-holder">
                             <a href="causes-details.html">
-                                <figure><img src="{{asset('frontend/images/cause/1.jpg')}}" alt=""></figure>
+                                <figure><img src="{{ asset('frontend/images/cause/1.jpg') }}" alt=""></figure>
                                 <div class="overlay">
                                 </div>
                             </a>
@@ -82,7 +80,8 @@
                         <div class="cause-content">
                             <div class="progress-item">
                                 <div class="progress" data-value="80">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                        aria-valuemax="100">
                                         <div class="value-holder"><span class="value"></span>%</div>
                                     </div>
                                 </div>
@@ -92,7 +91,9 @@
                                 <li>Goal: $50,000</li>
                             </ul>
                             <h4><a href="causes-details.html">Raise fund for Healthy Food</a></h4>
-                            <div class="text"><p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p></div>
+                            <div class="text">
+                                <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
+                            </div>
                             <button class="btn-one donate-box-btn">Donate Now</button>
                         </div>
                     </div>
@@ -101,7 +102,7 @@
                     <div class="single-item">
                         <div class="img-holder">
                             <a href="causes-details.html">
-                                <figure><img src="{{asset('frontend/images/cause/2.jpg')}}" alt=""></figure>
+                                <figure><img src="{{ asset('frontend/images/cause/2.jpg') }}" alt=""></figure>
                                 <div class="overlay">
                                 </div>
                             </a>
@@ -109,7 +110,8 @@
                         <div class="cause-content">
                             <div class="progress-item">
                                 <div class="progress" data-value="80">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                        aria-valuemax="100">
                                         <div class="value-holder"><span class="value"></span>%</div>
                                     </div>
                                 </div>
@@ -119,7 +121,9 @@
                                 <li>Goal: $50,000</li>
                             </ul>
                             <h4><a href="causes-details.html">Awareness Program</a></h4>
-                            <div class="text"><p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p></div>
+                            <div class="text">
+                                <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
+                            </div>
                             <button class="btn-one donate-box-btn">Donate Now</button>
                         </div>
                     </div>
@@ -128,7 +132,7 @@
                     <div class="single-item">
                         <div class="img-holder">
                             <a href="causes-details.html">
-                                <figure><img src="{{asset('frontend/images/cause/3.jpg')}}" alt=""></figure>
+                                <figure><img src="{{ asset('frontend/images/cause/3.jpg') }}" alt=""></figure>
                                 <div class="overlay">
                                 </div>
                             </a>
@@ -136,7 +140,8 @@
                         <div class="cause-content">
                             <div class="progress-item">
                                 <div class="progress" data-value="80">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                        aria-valuemax="100">
                                         <div class="value-holder"><span class="value"></span>%</div>
                                     </div>
                                 </div>
@@ -146,13 +151,15 @@
                                 <li>Goal: $50,000</li>
                             </ul>
                             <h4><a href="causes-details.html">Bring Them to Classroom</a></h4>
-                            <div class="text"><p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p></div>
+                            <div class="text">
+                                <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
+                            </div>
                             <button class="btn-one donate-box-btn">Donate Now</button>
                         </div>
                     </div>
                 </div>
             </div>
-    	</div>
+        </div>
     </section>
     <!-- cause section end -->
 
@@ -160,8 +167,12 @@
     <section class="help-us section-padding text-center">
         <div class="container">
             <div class="help-us-title">
-                <div class="section-title"><h2>How can you  <span>help us</span></h2></div>
-                <div class="title"><p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p></div>
+                <div class="section-title">
+                    <h2>How can you <span>help us</span></h2>
+                </div>
+                <div class="title">
+                    <p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
@@ -205,19 +216,24 @@
     <section class="img-gallery text-center section-padding">
         <div class="container">
             <div class="img-gallery-title">
-                <div class="section-title"><h2>Our <span>Gallery</span></h2></div>
-                <div class="title"><p></p></div>
+                <div class="section-title">
+                    <h2>Our <span>Gallery</span></h2>
+                </div>
+                <div class="title">
+                    <p></p>
+                </div>
             </div>
             <div class="row">
                 @foreach ($galleries as $gallery)
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="single-item">
                             <div class="img-holder">
-                                <figure><img src="{{asset($gallery->photo)}}" alt=""></figure>
+                                <figure><img src="{{ asset($gallery->photo) }}" alt=""></figure>
                                 <div class="overlay">
                                     <div class="box">
                                         <div class="content">
-                                            <a href="{{asset($gallery->photo)}}" class="fancybox"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                                            <a href="{{ asset($gallery->photo) }}" class="fancybox"><i
+                                                    class="fa fa-picture-o" aria-hidden="true"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -350,7 +366,9 @@
     <section class="testimonials section-padding text-center">
         <div class="container">
             <div class="testimonials-title">
-                <div class="section-title"><h2>What People <span>Say</span></h2></div>
+                <div class="section-title">
+                    <h2>What People <span>Say</span></h2>
+                </div>
                 <div class="title"></div>
             </div>
             <div class="row">
@@ -359,11 +377,11 @@
                         @foreach ($testimonials as $testimonial)
                             <div class="testimonials-content">
                                 <div class="text">
-                                    <p>{!!$testimonial->content!!}</p>
+                                    <p>{!! $testimonial->content !!}</p>
                                 </div>
                                 <div class="testimonials-autor">
-                                    <figure><img src="{{asset($testimonial->photo)}}" alt=""></figure>
-                                    <div class="autor">{{$testimonial->name}}</div>
+                                    <figure><img src="{{ asset($testimonial->photo) }}" alt=""></figure>
+                                    <div class="autor">{{ $testimonial->name }}</div>
                                     <span>Donator</span>
                                 </div>
                             </div>
@@ -384,24 +402,28 @@
                         <div class="event-donation-title">Upcoming <span>Events</span></div>
                         <div class="events-slide">
                             @foreach ($events as $event)
-                            <div class="single-item">
-                                @php
-                                    $date = new DateTime($event->date);
-                                @endphp
+                                <div class="single-item">
+                                    @php
+                                        $date = new DateTime($event->date);
+                                    @endphp
 
-                                <div class="date">{{$date->format('d') }}<span>{{ $date->format('M') }}</span></div>
-                                
-                                <div class="event-content">
-                                    <h4><a href="events.html">{{$event->title}}</a></h4>
-                                    <ul class="meta">
-                                        <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{\Carbon\Carbon::parse($event->start_time)->format('g:i A')}} - {{\Carbon\Carbon::parse($event->end_time)->format('g:i A')}}</li>
-                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{$event->location}}</li>
-                                    </ul>
-                                    <div class="text">
-                                        <p>{{ Str::words($event->description, 23) }}</p>
+                                    <div class="date">{{ $date->format('d') }}<span>{{ $date->format('M') }}</span>
+                                    </div>
+
+                                    <div class="event-content">
+                                        <h4><a href="events.html">{{ $event->title }}</a></h4>
+                                        <ul class="meta">
+                                            <li><i class="fa fa-clock-o"
+                                                    aria-hidden="true"></i>{{ \Carbon\Carbon::parse($event->start_time)->format('g:i A') }}
+                                                - {{ \Carbon\Carbon::parse($event->end_time)->format('g:i A') }}</li>
+                                            <li><i class="fa fa-map-marker" aria-hidden="true"></i>{{ $event->location }}
+                                            </li>
+                                        </ul>
+                                        <div class="text">
+                                            <p>{{ Str::words($event->description, 23) }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                         <div class="outslide">
@@ -414,50 +436,41 @@
                     <div class="donate-content">
                         <div class="event-donation-title">Make a <span>Donation</span></div>
                         <div class="text">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod 
-                            incididunt labore et dolore magna aliqua.</p>
+                            <p>Donate any amount for the welfare of the underprivileged children of Chayatal Bangladesh.</p>
                         </div>
                         <div class="dinate-form">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <label>I Want to Donate for</label>
-                                    <select class="custom-select-box">
-                                        <option selected="selected">I Want to Donate for</option>
-                                        <option>United Kingdom</option>
-                                        <option>California</option>
-                                        <option>Canada</option>
-                                        <option>Australia</option>
+                                    <select class="custom-select-box" required>
+                                        <option>Campus 1</option>
+                                        <option>Campus 2</option>
+                                        <option>Campus 3</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <label>Currency</label>
-                                    <select class="custom-select-box">
-                                        <option selected="selected">Currency</option>
-                                        <option>United Kingdom</option>
-                                        <option>California</option>
-                                        <option>Canada</option>
-                                        <option>Australia</option>
+                                    <select class="custom-select-box" id="currency">
+                                        <option value="BDT">BDT</option>
+                                        <option value="USD">USD</option>
+                                        <option value="AUD">Australian dollar</option>
+                                        <option value="CAD">Canadian dollar</option>
                                     </select>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <label>How much do you want to donate?</label>
-                                    <select class="custom-select-box">
-                                        <option selected="selected">$50</option>
-                                        <option>$100</option>
-                                        <option>$200</option>
-                                        <option>$300</option>
-                                        <option>$500</option>
+                                    <select class="custom-select-box" id="total_amount">
+                                        <option value="111">1000</option>
+                                        <option value="200">2000</option>
+                                        <option value="300">3000</option>
+                                        <option value="500">5000</option>
                                     </select>
                                 </div>
-                                <div class="col-md-12 col-sm-6 col-xs-12">
-                                    <label>Payment Type</label>
-                                    <input type="radio" name="optionsRadios"  value="option1" checked="checked">
-                                    <div class="text">One Time</div>
-                                    <input type="radio" name="optionsRadios"  value="option1">
-                                    <div class="text">Recurring</div>
-                                </div>
                             </div>
-                            <button class="btn-two donate-box-btn">Donate Now</button>
+                            <button type="submit" class="btn-two" id="sslczPayBtn"
+                                order="If you already have the transaction generated for current order"
+                                endpoint="/pay-via-ajax"> Pay Now
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -470,25 +483,35 @@
     <section class="our-sponsors section-padding text-center">
         <div class="container">
             <div class="sponsors-title">
-                <div class="section-title"><h2>Our <span>Sponsors</span></h2></div>
-                <div class="title"><p></p></div>
+                <div class="section-title">
+                    <h2>Our <span>Sponsors</span></h2>
+                </div>
+                <div class="title">
+                    <p></p>
+                </div>
             </div>
             <ul class="sponsors-slider">
                 @foreach ($sponsors as $sponsor)
-                    <li><a href="#"><figure><img src="{{asset($sponsor->photo)}}" alt=""></figure></a></li>
+                    <li><a href="#">
+                            <figure><img src="{{ asset($sponsor->photo) }}" alt=""></figure>
+                        </a></li>
                 @endforeach
             </ul>
         </div>
     </section>
-    
+
     <!-- sponsors section end -->
 
     <!-- news section -->
     <section class="news-section section-padding">
         <div class="container">
             <div class="news-title text-center">
-                <div class="section-title"><h2>Recent News</h2></div>
-                <div class="title"><p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p></div>
+                <div class="section-title">
+                    <h2>Recent News</h2>
+                </div>
+                <div class="title">
+                    <p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p>
+                </div>
             </div>
             <div class="row">
 
@@ -497,7 +520,8 @@
                         <div class="single-item">
                             <div class="img-box">
                                 <div class="img-holder">
-                                    <figure><a href="{{route('news.show', $news->id)}}"><img src="{{asset($news->photo)}}" alt=""></a></figure>
+                                    <figure><a href="{{ route('news.show', $news->id) }}"><img
+                                                src="{{ asset($news->photo) }}" alt=""></a></figure>
                                 </div>
                                 {{-- <ul class="img-content text-center">
                                     <li><i class="fa fa-calendar" aria-hidden="true"></i>20 Jan, 2017</li>
@@ -506,18 +530,44 @@
                                 </ul> --}}
                             </div>
                             <div class="news-content">
-                                <h4><a href="{{route('news.show', $news->id)}}">{{$news->title}}</a></h4>
+                                <h4><a href="{{ route('news.show', $news->id) }}">{{ $news->title }}</a></h4>
                                 <div class="text">
                                     <p>{!! $news->description !!}</p>
                                 </div>
-                                <a href="{{route('news.show', $news->id)}}" class="btn-two">Read More</a>
+                                <a href="{{ route('news.show', $news->id) }}" class="btn-two">Read More</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-                
+
             </div>
         </div>
     </section>
     <!-- news section end -->
 @endsection
+@push('js')
+    <script>
+
+        $("#sslczPayBtn").click(function(e) {
+            var obj = {};
+            obj.currency = $('#currency').val();
+            obj.amount = $('#total_amount').val();
+
+            $(this).prop('postdata', obj);
+        });
+
+
+
+
+        (function (window, document) {
+            var loader = function () {
+                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR LIVE
+                //script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR SANDBOX
+                tag.parentNode.insertBefore(script, tag);
+            };
+
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
+@endpush
