@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Backend\WebInfoController;
 use App\Http\Controllers\Frontend\AdministrativeController;
+use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageContentController;
 use App\Http\Controllers\ProfileController;
@@ -52,6 +53,9 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 require __DIR__ . '/auth.php';
 
 Route::get('/login', [AdminController::class, 'login'])->name('login');
+
+//pages
+Route::get('/donation',[DonationController::class,'donate'])->name('donation');
 
 Route::middleware(['auth','role:admin'])->group(function () {
 

@@ -61,7 +61,7 @@
                             </div>
                         </nav>
                         <div class="info-box">
-                            <button class="donate-box-btn btn-one">donate now</button>
+                            <a href="{{route('donation')}}" class="donate-box-btn btn-one">donate now</a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                             </div>
                         </nav>
                         <div class="info-box">
-                            <button class="donate-box-btn btn-one">donate now</button>
+                            <a href="{{route('donation')}}" class="donate-box-btn btn-one">donate now</a>
                         </div>
                     </div>
                 </div>

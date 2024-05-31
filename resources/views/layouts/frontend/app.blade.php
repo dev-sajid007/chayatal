@@ -47,29 +47,38 @@
         <div class="popup-inner">
             <div class="container">
                 <div class="donate-form-area">
-                    <h2>Donation Information</h2>
-                    <h4>How much would you like to donate:</h4>
                     <form action="#" class="donate-form default-form">
+                    <h2>Donation Information</h2>
+
+                    <h4>Select Currency</h4>
+                    <select class="form-control" id="currency">
+                        <option value="BDT">BDT</option>
+                        <option value="USD">USD</option>
+                        <option value="AUD">Australian dollar</option>
+                        <option value="CAD">Canadian dollar</option>
+                    </select> 
+                    <hr>
+                    <h4>How much would you like to donate:</h4>
                         <ul class="chicklet-list clearfix">
                             <li>
                                 <input type="radio" id="donate-amount-1" name="donate-amount" />
-                                <label for="donate-amount-1" data-amount="1000">$1000</label>
+                                <label for="donate-amount-1" data-amount="1000">1000</label>
                             </li>
                             <li>
                                 <input type="radio" id="donate-amount-2" name="donate-amount" checked="checked" />
-                                <label for="donate-amount-2" data-amount="2000">$2000</label>
+                                <label for="donate-amount-2" data-amount="2000">2000</label>
                             </li>
                             <li>
                                 <input type="radio" id="donate-amount-3" name="donate-amount" />
-                                <label for="donate-amount-3" data-amount="3000">$3000</label>
+                                <label for="donate-amount-3" data-amount="3000">3000</label>
                             </li>
                             <li>
                                 <input type="radio" id="donate-amount-4" name="donate-amount" />
-                                <label for="donate-amount-4" data-amount="4000">$4000</label>
+                                <label for="donate-amount-4" data-amount="4000">4000</label>
                             </li>
                             <li>
                                 <input type="radio" id="donate-amount-5" name="donate-amount" />
-                                <label for="donate-amount-5" data-amount="5000">$5000</label>
+                                <label for="donate-amount-5" data-amount="5000">5000</label>
                             </li>
                             <li class="other-amount">
 
@@ -85,67 +94,36 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <p>Your Name*</p>
-                                        <input type="text" name="fname" placeholder="">
+                                        <input type="text" name="fname" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <p>Email*</p>
-                                        <input type="text" name="fname" placeholder="">
+                                        <input type="text" name="fname" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <p>Address*</p>
-                                        <input type="text" name="fname" placeholder="">
+                                        <input type="text" name="fname" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <p>Phn Num*</p>
-                                        <input type="text" name="fname" placeholder="">
+                                        <input type="text" name="fname" placeholder="" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <ul class="payment-option">
-                            <li>
-                                <h4>Choose your payment method:</h4>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="pay-us" type="checkbox">
-                                        <span>Paypal</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="pay-us" type="checkbox">
-                                        <span>Offline Donation</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="pay-us" type="checkbox">
-                                        <span>Credit Card</span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="pay-us" type="checkbox">
-                                        <span>Debit Card</span>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="center"><button class="btn-one" type="submit">Donate Now</button></div>
+                        <hr>
+                        <div class="center">
+                            <button type="submit" class="btn-one" id="sslczPayBtn2"
+                            order="If you already have the transaction generated for current order"
+                            endpoint="/pay-via-ajax"> Donate Now
+                        </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -196,6 +174,18 @@
 
     @stack('js')
     <!-- End of .page_wrapper -->
+    <script>
+        (function (window, document) {
+            var loader = function () {
+                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR LIVE
+                //script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR SANDBOX
+                tag.parentNode.insertBefore(script, tag);
+            };
+
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
 </body>
 
 </html>
