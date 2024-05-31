@@ -275,4 +275,4 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
 
 
-//Route::get('/{slug}',[PageController::class,'page'])->name('page');
+Route::get('/{slug}',[PageController::class,'page'])->name('page');
