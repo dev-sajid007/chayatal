@@ -547,7 +547,10 @@
             var obj = {};
             obj.currency = $('#currency').val();
             obj.amount = $('#total_amount').val();
-
+            obj.name = "Customer Name";
+            obj.email = "customer@mail.com";
+            obj.address =  "Customer Address";
+            obj.phone = "8801XXXXXXXXX";
             $(this).prop('postdata', obj);
         });
 
