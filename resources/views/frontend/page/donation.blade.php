@@ -12,6 +12,8 @@
                     <option value="USD">USD</option>
                     <option value="AUD">Australian dollar</option>
                     <option value="CAD">Canadian dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">United Kingdom</option>
                 </select>
                 <hr>
                 <h4>How much would you like to donate:</h4>
