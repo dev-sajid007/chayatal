@@ -26,7 +26,7 @@
             </div>
             <div class="col-md-8 col-sm-6 col-xs-12">
                 <div class="text">
-                    {{$child->description}}
+                    {!! $child->description !!}
                 </div>
                 <a href="{{route('donation')}}" class="btn-one donate-box-btn">Donate Now</a>
             </div>
