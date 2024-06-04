@@ -54,33 +54,38 @@
                                         <label for="name">Gender</label>
                                         <select class="form-control" name="gender" id="" required>
                                             <option value="male">Male</option>
-                                            <option value="male">Female</option>
+                                            <option value="female">Female</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">Date Of Birth</label>
-                                        <input type="date" name="dob" class="form-control" id="" required>
+                                        <input type="date" name="dob" value="{{ $child->dob ?? old('dob') }}" class="form-control" id="" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Dream</label>
-                                        <input type="text" name="dream" class="form-control" id="" required>
+                                        <input type="text" name="dream" value="{{ $child->dream ?? old('dream') }}" class="form-control" id="" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Country</label>
-                                        <input type="text" name="country" class="form-control" id="" required>
+                                        <input type="text" name="country" value="{{ $child->country ?? old('country') }}" class="form-control" id="" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Amount</label>
-                                        <input type="number" name="amount" class="form-control" id="" required>
+                                        <input type="number" name="amount" value="{{ $child->amount ?? old('amount') }}" class="form-control" id="" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Image</label>
-                                        <input type="file" name="image" class="form-control dropify" id="" required>
+                                        <input type="file" name="image" class="form-control dropify" id="" {{@$child->image ? "":"required"}}>
                                     </div>
+                                    @if(isset($child->image))
+                                    <div class="form-group">
+                                        <label for="">Old Photo</label><br>
+                                        <img src="{{asset($child->image)}}" width="120" alt="">
+                                    @endif
                                     <div class="form-group">
                                         <label for="name">Description</label>
-                                        <textarea name="description" class="from-control" id="summernote" cols="30" rows="10"></textarea>
+                                        <textarea name="description" class="from-control" id="summernote" cols="30" rows="10">{{@$child->description}}</textarea>
                                     </div>
 
 

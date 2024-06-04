@@ -13,7 +13,7 @@ class ChildController extends Controller
     public function index()
     {
         $childs = Child::all();
-        return view('admin.child.index',compact('childs'));
+        return view('admin.child.index', compact('childs'));
     }
 
 
@@ -48,6 +48,41 @@ class ChildController extends Controller
         return redirect()->route('admin.child.index')->with($notification);
     }
 
+
+    public function edit($id)
+    {
+        $child = Child::find($id);
+        return view('admin.child.create', compact('child'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $child = Child::find($id);
+        $child->update([
+            'name'        => $request->name,
+            'gender'      => $request->gender,
+            'dob'         => $request->dob,
+            'dream'       => $request->dream,
+            'country'     => $request->country,
+            'amount'      => $request->amount,
+            'description' => $request->description,
+            'image'       => $child->image,
+        ]);
+
+        //image upload
+        if ($request->image) {
+            $this->uploadFileWithResize($request->image, $child, 'image', 'child', 268, 251);
+        }
+
+
+
+        $notification = array(
+            'message' => 'Child Profile Update Successfully ',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('admin.child.index')->with($notification);
+    }
 
     public function delete($id)
     {
