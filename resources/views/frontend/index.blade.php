@@ -79,25 +79,17 @@
                                     </div>
                                 </a>
                             </div>
+                            @php
+                                    $diff = (date('Y') - date('Y',strtotime($child->dob)));
+                            @endphp
                             <div class="cause-content">
-                                {{-- <div class="progress-item">
-                                    <div class="progress" data-value="80">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="value-holder"><span class="value"></span>%</div>
-                                        </div>
-                                    </div>
-                                </div> --}}
                                 <ul class="meta">
-                                    <li>Age: {{$child->dob}}</li>
+                                    <li>Age: {{$diff}}</li>
                                     <li>Gender: {{$child->gender}}</li>
                                     <li>Dream: {{$child->dream}}</li>
                                 </ul>
                                 <h4><a href="{{route('childs.show',$child->id)}}">{{$child->name}}</a></h4>
-                                {{-- <div class="text">
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
-                                </div> --}}
-                                <button class="btn-one donate-box-btn">Donate Now</button>
+                                <a href="{{route('childs.show',$child->id)}}" class="btn-one donate-box-btn">Donate Now</a>
                             </div>
                         </div>
                     </div>
