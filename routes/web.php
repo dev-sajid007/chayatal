@@ -273,6 +273,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
 Route::get('/news/{id}',[NewsController::class, 'show'])->name('news.show');
 Route::get('/childs/{id}',[FrontendChildController::class, 'show'])->name('childs.show');
+
 Route::get('/executive', [AdministrativeController::class, 'executive'])->name('executive');
 Route::get('/governing_body', [AdministrativeController::class, 'governingBody'])->name('governing_body');
 Route::get('/adviser', [AdministrativeController::class, 'adviser'])->name('adviser');

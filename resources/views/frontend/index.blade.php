@@ -89,7 +89,7 @@
                                     <li>Dream: {{$child->dream}}</li>
                                 </ul>
                                 <h4><a href="{{route('childs.show',$child->id)}}">{{$child->name}}</a></h4>
-                                <a href="{{route('childs.show',$child->id)}}" class="btn-one donate-box-btn">Donate Now</a>
+                                <a href="{{route('childs.show',$child->id)}}" class="btn-one donate-box-btn">Sponsor Me</a>
                             </div>
                         </div>
                     </div>
