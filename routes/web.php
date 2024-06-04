@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AdviserControler;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ChildController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\ExecutiveController;
 use App\Http\Controllers\Backend\FooterContentController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Backend\WebInfoController;
 use App\Http\Controllers\Frontend\AdministrativeController;
+use App\Http\Controllers\Frontend\ChildController as FrontendChildController;
 use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageContentController;
@@ -85,6 +87,17 @@ Route::middleware(['auth','role:admin'])->group(function () {
             Route::get('/edit/{id}',[TagController::class, 'edit'])->name('edit');
             Route::post('/update/{id}',[TagController::class, 'update'])->name('update');
             Route::get('/delete/{id}',[TagController::class, 'delete'])->name('delete');
+    
+        });
+
+        Route::group(['as'=>'child.','prefix'=>'child'],function(){
+    
+            Route::get('/',[ChildController::class, 'index'])->name('index');
+            Route::get('/create',[ChildController::class, 'create'])->name('create');
+            Route::post('/store',[ChildController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[ChildController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[ChildController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[ChildController::class, 'delete'])->name('delete');
     
         });
 
@@ -259,6 +272,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
 // });
 
 Route::get('/news/{id}',[NewsController::class, 'show'])->name('news.show');
+Route::get('/childs/{id}',[FrontendChildController::class, 'show'])->name('childs.show');
 Route::get('/executive', [AdministrativeController::class, 'executive'])->name('executive');
 Route::get('/governing_body', [AdministrativeController::class, 'governingBody'])->name('governing_body');
 Route::get('/adviser', [AdministrativeController::class, 'adviser'])->name('adviser');

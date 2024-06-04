@@ -15,7 +15,7 @@
     <div class="sidebar-heading">
         Features
     </div>
-    <li class="nav-item {{(Request::is('admin/category*'))?'active':''}}">
+    {{-- <li class="nav-item {{(Request::is('admin/category*'))?'active':''}}">
         <a class="nav-link" href="{{route('admin.category.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
             <span>Category</span>
@@ -25,6 +25,12 @@
         <a class="nav-link" href="{{route('admin.tag.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>
             <span>Tag</span>
+        </a>
+    </li> --}}
+    <li class="nav-item {{(Request::is('admin/child*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.child.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Child</span>
         </a>
     </li>
     <li class="nav-item {{(Request::is('admin/executive*'))?'active':''}}">

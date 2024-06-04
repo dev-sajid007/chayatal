@@ -61,103 +61,48 @@
         <div class="container">
             <div class="cause-title">
                 <div class="section-title">
-                    <h2>Our <span>CAuses</span></h2>
+                    <h2>Sponsor a <span>Child</span></h2>
                 </div>
                 <div class="title">
-                    <p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p>
+                    <p>By sponsoring a child you can help a child to attend school to get his education without any risk of dropout.
+                        In our child sponsorship program you can provide support for a child and his community.</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <a href="causes-details.html">
-                                <figure><img src="{{ asset('frontend/images/cause/1.jpg') }}" alt=""></figure>
-                                <div class="overlay">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cause-content">
-                            <div class="progress-item">
-                                <div class="progress" data-value="80">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                        aria-valuemax="100">
-                                        <div class="value-holder"><span class="value"></span>%</div>
+                @foreach ($childs as $child)
+                    <div class="col-md-3 col-sm-6 col-xs-12" style="margin-top: 20px">
+                        <div class="single-item">
+                            <div class="img-holder">
+                                <a href="{{route('childs.show',$child->id)}}">
+                                    <figure><img src="{{ asset($child->image) }}" alt=""></figure>
+                                    <div class="overlay">
                                     </div>
-                                </div>
+                                </a>
                             </div>
-                            <ul class="meta">
-                                <li>Raised: $40,000</li>
-                                <li>Goal: $50,000</li>
-                            </ul>
-                            <h4><a href="causes-details.html">Raise fund for Healthy Food</a></h4>
-                            <div class="text">
-                                <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
+                            <div class="cause-content">
+                                {{-- <div class="progress-item">
+                                    <div class="progress" data-value="80">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="value-holder"><span class="value"></span>%</div>
+                                        </div>
+                                    </div>
+                                </div> --}}
+                                <ul class="meta">
+                                    <li>Age: {{$child->dob}}</li>
+                                    <li>Gender: {{$child->gender}}</li>
+                                    <li>Dream: {{$child->dream}}</li>
+                                </ul>
+                                <h4><a href="{{route('childs.show',$child->id)}}">{{$child->name}}</a></h4>
+                                {{-- <div class="text">
+                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
+                                </div> --}}
+                                <button class="btn-one donate-box-btn">Donate Now</button>
                             </div>
-                            <button class="btn-one donate-box-btn">Donate Now</button>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <a href="causes-details.html">
-                                <figure><img src="{{ asset('frontend/images/cause/2.jpg') }}" alt=""></figure>
-                                <div class="overlay">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cause-content">
-                            <div class="progress-item">
-                                <div class="progress" data-value="80">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                        aria-valuemax="100">
-                                        <div class="value-holder"><span class="value"></span>%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="meta">
-                                <li>Raised: $40,000</li>
-                                <li>Goal: $50,000</li>
-                            </ul>
-                            <h4><a href="causes-details.html">Awareness Program</a></h4>
-                            <div class="text">
-                                <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
-                            </div>
-                            <button class="btn-one donate-box-btn">Donate Now</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-item">
-                        <div class="img-holder">
-                            <a href="causes-details.html">
-                                <figure><img src="{{ asset('frontend/images/cause/3.jpg') }}" alt=""></figure>
-                                <div class="overlay">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cause-content">
-                            <div class="progress-item">
-                                <div class="progress" data-value="80">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0"
-                                        aria-valuemax="100">
-                                        <div class="value-holder"><span class="value"></span>%</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="meta">
-                                <li>Raised: $40,000</li>
-                                <li>Goal: $50,000</li>
-                            </ul>
-                            <h4><a href="causes-details.html">Bring Them to Classroom</a></h4>
-                            <div class="text">
-                                <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.</p>
-                            </div>
-                            <button class="btn-one donate-box-btn">Donate Now</button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
