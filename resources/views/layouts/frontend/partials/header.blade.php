@@ -92,7 +92,7 @@
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
                                     @foreach ($menus as $menu)
-                                        <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="#">{{$menu->title}}</a>
+                                        <li class="{{count($menu->childs) > 0 ? "dropdown" : ""}}"><a href="{{$menu->url}}">{{$menu->title}}</a>
                                             @if ($menu->childs)
                                             <ul>
                                                 @foreach ($menu->childs as $item)
