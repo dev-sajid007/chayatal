@@ -13,4 +13,11 @@ class ChildController extends Controller
         $child = Child::find($id); 
         return view('frontend.page.child-details',compact('child'));
     }
+
+
+    public function sponsor()
+    {
+        $childs = Child::all(); 
+        return view('frontend.page.sponsor-a-child',compact('childs'));
+    }
 }

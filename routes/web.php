@@ -58,6 +58,7 @@ Route::get('/login', [AdminController::class, 'login'])->name('login');
 
 //pages
 Route::get('/donation',[DonationController::class,'donate'])->name('donation');
+Route::get('/sponsor-a-child',[FrontendChildController::class,'sponsor'])->name('sponsor-a-child');
 
 Route::middleware(['auth','role:admin'])->group(function () {
 
