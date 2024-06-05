@@ -1,6 +1,11 @@
 @extends('layouts.frontend.app')
 
 @section('content')
+<style>
+    .tns-controls{
+        display: none
+    }
+</style>
     <!--Main Slider-->
     <section class="main-banner banner">
         <div class="rev_slider_wrapper">
@@ -64,37 +69,39 @@
                     <h2>Sponsor a <span>Child</span></h2>
                 </div>
                 <div class="title">
-                    <p>By sponsoring a child you can help a child to attend school to get his education without any risk of dropout.
+                    <p>By sponsoring a child you can help a child to attend school to get his education without any risk of
+                        dropout.
                         In our child sponsorship program you can provide support for a child and his community.</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row my-slider">
                 @foreach ($childs as $child)
-                    <div class="col-md-3 col-sm-6 col-xs-12" style="margin-top: 20px">
+                    <div class="col-md-3">
                         <div class="single-item">
                             <div class="img-holder">
-                                <a href="{{route('childs.show',$child->id)}}">
-                                    <figure><img src="{{ asset($child->image) }}" alt=""></figure>
+                                <a href="{{ route('childs.show', $child->id) }}">
+                                    <figure><img style="width: 260px;height:250px" src="{{ asset($child->image) }}"
+                                            alt=""></figure>
                                     <div class="overlay">
                                     </div>
                                 </a>
                             </div>
                             @php
-                                    $diff = (date('Y') - date('Y',strtotime($child->dob)));
+                                $diff = date('Y') - date('Y', strtotime($child->dob));
                             @endphp
                             <div class="cause-content">
                                 <ul class="meta">
-                                    <li>Age: {{$diff}}</li>
-                                    <li>Gender: {{$child->gender}}</li>
-                                    <li>Dream: {{$child->dream}}</li>
+                                    <li>Age: {{ $diff }}</li>
+                                    <li>Gender: {{ $child->gender }}</li>
+                                    <li>Dream: {{ $child->dream }}</li>
                                 </ul>
-                                <h4><a href="{{route('childs.show',$child->id)}}">{{$child->name}}</a></h4>
-                                <a href="{{route('childs.show',$child->id)}}" class="btn-one donate-box-btn">Sponsor Me</a>
+                                <h4><a href="{{ route('childs.show', $child->id) }}">{{ $child->name }}</a></h4>
+                                <a href="{{ route('childs.show', $child->id) }}" class="btn-one donate-box-btn">Sponsor
+                                    Me</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </section>
@@ -398,7 +405,8 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <label>How much do you want to donate?</label>
-                                    <input type="number" name="" value="1000" class="form-control" id="total_amount">
+                                    <input type="number" name="" value="1000" class="form-control"
+                                        id="total_amount">
                                 </div>
                             </div>
                             <button type="submit" class="btn-two" id="sslczPayBtn"
@@ -481,6 +489,27 @@
 @endsection
 @push('js')
     <script>
+        var slider = tns({
+            container: '.my-slider',
+            items: 1,
+            mouseDrag: true,
+            swipeAngle: false,
+            autoplayButton:false,
+            responsive: {
+                640: {
+                    edgePadding: 20,
+                    gutter: 20,
+                    items: 2
+                },
+                700: {
+                    gutter: 30
+                },
+                900: {
+                    items: 4
+                }
+            }
+        });
+
 
         $("#sslczPayBtn").click(function(e) {
             var obj = {};
@@ -488,14 +517,9 @@
             obj.amount = $('#total_amount').val();
             obj.name = "Customer Name";
             obj.email = "customer@mail.com";
-            obj.address =  "Customer Address";
+            obj.address = "Customer Address";
             obj.phone = "8801XXXXXXXXX";
             $(this).prop('postdata', obj);
         });
-
-
-
-
-   
     </script>
 @endpush

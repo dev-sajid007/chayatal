@@ -8,7 +8,9 @@
     <link href="{{ asset('frontend/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/revolution-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+    <link rel="stylesheet" href="https://ganlanyuan.github.io/tiny-slider/demo/css/styles.css">
     <!--Favicon-->
     <link rel="shortcut icon" href="{{ asset($info->favicon) }}" type="image/x-icon">
     <link rel="icon" href="{{ asset($info->favicon) }}" type="image/x-icon">
@@ -79,6 +81,8 @@
     <script src="{{ asset('frontend/js/jquery.bxslider.min.js') }}"></script>
     <script src="{{ asset('frontend/js/map-script.js') }}"></script>
     <script src="{{ asset('frontend/js/script.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
 
     @stack('js')
     <!-- End of .page_wrapper -->
