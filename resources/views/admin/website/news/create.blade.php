@@ -76,6 +76,13 @@
                                         </div>
 
                                     </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="">Button Link</label>
+                                            <input type="text"  value="{{ $news->button_link ?? old('button_link') }}"  name="button_link" class="form-control" id="">
+                                        </div>
+                                    </div>
 
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-primary mt-3">

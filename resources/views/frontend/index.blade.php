@@ -476,7 +476,7 @@
                                 <div class="text">
                                     <p>{!! $news->description !!}</p>
                                 </div>
-                                <a href="{{ route('news.show', $news->id) }}" class="btn-two">Read More</a>
+                                <a href="{{$news->button_link}}" class="btn-two">Read More</a>
                             </div>
                         </div>
                     </div>

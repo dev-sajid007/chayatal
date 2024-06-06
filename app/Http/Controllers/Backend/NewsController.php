@@ -56,6 +56,7 @@ class NewsController extends Controller
         $news = new News();
         $news->title = $request->title;
         $news->description = $request->description;
+        $news->button_link = $request->button_link;
         $news->save();
         
         if ($request->hasFile('photo')) {
@@ -102,6 +103,7 @@ class NewsController extends Controller
         $news = News::find($id);
         $news->title = $request->title;
         $news->description = $request->description;
+        $news->button_link = $request->button_link;
         $news->update();
         
         if ($request->hasFile('photo')) {
