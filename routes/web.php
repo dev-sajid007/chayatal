@@ -25,6 +25,7 @@ use App\Http\Controllers\Frontend\ChildController as FrontendChildController;
 use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageContentController;
+use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,11 @@ Route::get('/login', [AdminController::class, 'login'])->name('login');
 //pages
 Route::get('/donation',[DonationController::class,'donate'])->name('donation');
 Route::get('/sponsor-a-child',[FrontendChildController::class,'sponsor'])->name('sponsor-a-child');
+
+Route::get('/upcoming-projects',[FrontendProjectController::class,'upcomingProjects'])->name('upcoming-projects');
+Route::get('/running-projects',[FrontendProjectController::class,'runningProjects'])->name('running-projects');
+Route::get('/completed-projects',[FrontendProjectController::class,'completedProjects'])->name('completed-projects');
+Route::get('/single-project/{id}',[FrontendProjectController::class,'singleProject'])->name('single-project');
 
 Route::middleware(['auth','role:admin'])->group(function () {
 

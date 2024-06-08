@@ -452,7 +452,7 @@
                     <h2>Recent News</h2>
                 </div>
                 <div class="title">
-                    <p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p>
+                    <p>The activities of Chayatal Bangladesh have been reported by various media outlets.</p>
                 </div>
             </div>
             <div class="row news-slider">
