@@ -455,7 +455,7 @@
                     <p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row news-slider">
 
                 @foreach ($newses as $news)
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -506,6 +506,27 @@
                 },
                 900: {
                     items: 4
+                }
+            }
+        });
+
+        var newsSlider = tns({
+            container: '.news-slider',
+            items: 1,
+            mouseDrag: true,
+            swipeAngle: false,
+            autoplayButton:false,
+            responsive: {
+                640: {
+                    edgePadding: 20,
+                    gutter: 20,
+                    items: 2
+                },
+                700: {
+                    gutter: 30
+                },
+                900: {
+                    items: 3
                 }
             }
         });
