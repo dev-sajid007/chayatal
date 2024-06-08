@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\GoverningBodyController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\PageController;
+use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\SponsorController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\TestimonialController;
@@ -136,6 +137,23 @@ Route::middleware(['auth','role:admin'])->group(function () {
     
         });
 
+        Route::group(['as'=>'project.','prefix'=>'project'],function(){
+    
+            Route::get('/',[ProjectController::class, 'index'])->name('index');
+            Route::get('/create',[ProjectController::class, 'create'])->name('create');
+            Route::post('/store',[ProjectController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[ProjectController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[ProjectController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[ProjectController::class, 'delete'])->name('delete');
+    
+        });
+
+
+
+
+
+
+        //website management
 
         Route::group(['as'=>'website.','prefix'=>'website'],function(){
 
