@@ -20,9 +20,6 @@
                     </div>
                     <div class="news-content">
                         <h4><a href="{{route('single-project',$project->id)}}">{{$project->title}}</a></h4>
-                        <div class="text">
-                            <p> {!! $project->description !!} </p>
-                        </div>
                         <a href="{{route('single-project',$project->id)}}" class="btn-two">Details</a>
                     </div>
                 </div>
