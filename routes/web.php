@@ -28,6 +28,7 @@ use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageContentController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
+use App\Http\Controllers\Frontend\ReportController as FrontendReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,11 @@ Route::get('/upcoming-projects',[FrontendProjectController::class,'upcomingProje
 Route::get('/running-projects',[FrontendProjectController::class,'runningProjects'])->name('running-projects');
 Route::get('/completed-projects',[FrontendProjectController::class,'completedProjects'])->name('completed-projects');
 Route::get('/single-project/{id}',[FrontendProjectController::class,'singleProject'])->name('single-project');
+
+//reports
+Route::get('/monthly-reports',[FrontendReportController::class,'monthlyReports'])->name('monthly-reports');
+Route::get('/annual-reports',[FrontendReportController::class,'annualReports'])->name('annual-reports');
+Route::get('/audit-reports',[FrontendReportController::class,'auditReports'])->name('audit-reports');
 
 Route::middleware(['auth','role:admin'])->group(function () {
 
