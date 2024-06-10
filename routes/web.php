@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\ProjectController;
+use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SponsorController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\TestimonialController;
@@ -163,6 +164,18 @@ Route::middleware(['auth','role:admin'])->group(function () {
             Route::get('/edit/{id}',[ChayatalNewsController::class, 'edit'])->name('edit');
             Route::post('/update/{id}',[ChayatalNewsController::class, 'update'])->name('update');
             Route::get('/delete/{id}',[ChayatalNewsController::class, 'delete'])->name('delete');
+    
+        });
+
+
+        Route::group(['as'=>'report.','prefix'=>'report'],function(){
+    
+            Route::get('/',[ReportController::class, 'index'])->name('index');
+            Route::get('/create',[ReportController::class, 'create'])->name('create');
+            Route::post('/store',[ReportController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[ReportController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[ReportController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[ReportController::class, 'delete'])->name('delete');
     
         });
 
