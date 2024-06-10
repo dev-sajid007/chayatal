@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AdviserControler;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\CampaignController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ChayatalNewsController;
 use App\Http\Controllers\Backend\ChildController;
 use App\Http\Controllers\Backend\EventController;
 use App\Http\Controllers\Backend\ExecutiveController;
@@ -151,6 +152,17 @@ Route::middleware(['auth','role:admin'])->group(function () {
             Route::get('/edit/{id}',[ProjectController::class, 'edit'])->name('edit');
             Route::post('/update/{id}',[ProjectController::class, 'update'])->name('update');
             Route::get('/delete/{id}',[ProjectController::class, 'delete'])->name('delete');
+    
+        });
+
+        Route::group(['as'=>'chayatal-news.','prefix'=>'chayatal-news'],function(){
+    
+            Route::get('/',[ChayatalNewsController::class, 'index'])->name('index');
+            Route::get('/create',[ChayatalNewsController::class, 'create'])->name('create');
+            Route::post('/store',[ChayatalNewsController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[ChayatalNewsController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[ChayatalNewsController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[ChayatalNewsController::class, 'delete'])->name('delete');
     
         });
 

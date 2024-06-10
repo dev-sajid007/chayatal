@@ -57,6 +57,12 @@
             <span>Project</span>
         </a>
     </li>
+    <li class="nav-item {{(Request::is('admin/chayatal-news*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.chayatal-news.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Chayatal News</span>
+        </a>
+    </li>
     <li class="nav-item {{(Request::is('admin/website*'))?'active':''}}">
         <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseBootstrap"
             aria-expanded="true" aria-controls="collapseBootstrap">
