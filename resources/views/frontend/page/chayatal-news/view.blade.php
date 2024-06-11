@@ -10,17 +10,17 @@
                 <div class="blog-single-section">
                     <div class="news-style-one">
                         <div class="img-box">
-                            <figure><img src="{{asset($project->photo)}}" alt=""></figure>
+                            <figure><img src="{{asset($news->photo)}}" alt=""></figure>
                         </div>
                         <div class="lower-content">
                             <ul class="meta">
                                 @php
-                                    $date = new DateTime($project->created_at);
+                                    $date = new DateTime($news->created_at);
                                 @endphp
                             </ul>
-                            <div class="single-blog-title">{{$project->title}}</div>
+                            <div class="single-blog-title">{{$news->title}}</div>
                             <div class="text">
-                                {!! $project->description !!}
+                                {!! $news->description !!}
                             </div>
                         </div>
                     </div>

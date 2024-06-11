@@ -23,6 +23,7 @@ use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\Backend\WebInfoController;
 use App\Http\Controllers\Frontend\AdministrativeController;
+use App\Http\Controllers\Frontend\ChayatalNewsController as FrontendChayatalNewsController;
 use App\Http\Controllers\Frontend\ChildController as FrontendChildController;
 use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -74,6 +75,9 @@ Route::get('/single-project/{id}',[FrontendProjectController::class,'singleProje
 Route::get('/monthly-reports',[FrontendReportController::class,'monthlyReports'])->name('monthly-reports');
 Route::get('/annual-reports',[FrontendReportController::class,'annualReports'])->name('annual-reports');
 Route::get('/audit-reports',[FrontendReportController::class,'auditReports'])->name('audit-reports');
+//newses
+Route::get('/chayatal-newses',[FrontendChayatalNewsController::class,'index']);
+Route::get('/single-news/{id}',[FrontendChayatalNewsController::class,'singleNews'])->name('single-news');
 
 Route::middleware(['auth','role:admin'])->group(function () {
 
