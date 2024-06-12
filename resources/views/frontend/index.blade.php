@@ -115,7 +115,7 @@
                     <h2>How can you <span>help us</span></h2>
                 </div>
                 <div class="title">
-                    <p>Cupidatat non proident sunt in culpa qui officia deserunt mollit</p>
+                    <p>Your little contribution may bright a child's future.</p>
                 </div>
             </div>
             <div class="row">
