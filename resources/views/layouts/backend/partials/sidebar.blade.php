@@ -75,6 +75,12 @@
             <span>Report</span>
         </a>
     </li>
+    <li class="nav-item {{(Request::is('admin/media*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.media.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Media</span>
+        </a>
+    </li>
     <li class="nav-item {{(Request::is('admin/website*'))?'active':''}}">
         <a class="nav-link collapsed " href="#" data-toggle="collapse" data-target="#collapseBootstrap"
             aria-expanded="true" aria-controls="collapseBootstrap">

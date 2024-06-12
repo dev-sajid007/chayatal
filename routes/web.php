@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ExecutiveController;
 use App\Http\Controllers\Backend\FooterContentController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\GoverningBodyController;
+use App\Http\Controllers\Backend\MediaController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\NewsController;
 use App\Http\Controllers\Backend\PageController;
@@ -28,6 +29,7 @@ use App\Http\Controllers\Frontend\ChayatalNewsController as FrontendChayatalNews
 use App\Http\Controllers\Frontend\ChildController as FrontendChildController;
 use App\Http\Controllers\Frontend\DonationController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\MediaController as FrontendMediaController;
 use App\Http\Controllers\Frontend\PageContentController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\Frontend\ReportController as FrontendReportController;
@@ -84,6 +86,11 @@ Route::get('/single-news/{id}',[FrontendChayatalNewsController::class,'singleNew
 Route::get('/success-stories',[FrontendStoryController::class,'index']);
 Route::get('/child-guardian-stories',[FrontendStoryController::class,'childStories']);
 Route::get('/single-story/{id}',[FrontendStoryController::class,'singleStory'])->name('single-story');
+
+//media
+Route::get('/media',[FrontendMediaController::class,'index']);
+
+
 
 Route::middleware(['auth','role:admin'])->group(function () {
 
@@ -203,6 +210,18 @@ Route::middleware(['auth','role:admin'])->group(function () {
             Route::get('/edit/{id}',[StoryController::class, 'edit'])->name('edit');
             Route::post('/update/{id}',[StoryController::class, 'update'])->name('update');
             Route::get('/delete/{id}',[StoryController::class, 'delete'])->name('delete');
+    
+        });
+
+
+        Route::group(['as'=>'media.','prefix'=>'media'],function(){
+    
+            Route::get('/',[MediaController::class, 'index'])->name('index');
+            Route::get('/create',[MediaController::class, 'create'])->name('create');
+            Route::post('/store',[MediaController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[MediaController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[MediaController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[MediaController::class, 'delete'])->name('delete');
     
         });
 
