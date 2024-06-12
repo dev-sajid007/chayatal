@@ -63,6 +63,12 @@
             <span>Chayatal News</span>
         </a>
     </li>
+    <li class="nav-item {{(Request::is('admin/story*'))?'active':''}}">
+        <a class="nav-link" href="{{route('admin.story.index')}}">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>Story</span>
+        </a>
+    </li>
     <li class="nav-item {{(Request::is('admin/report*'))?'active':''}}">
         <a class="nav-link" href="{{route('admin.report.index')}}">
             <i class="fab fa-fw fa-wpforms"></i>

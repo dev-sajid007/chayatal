@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SponsorController;
+use App\Http\Controllers\Backend\StoryController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\VendorController;
@@ -30,6 +31,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageContentController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\Frontend\ReportController as FrontendReportController;
+use App\Http\Controllers\Frontend\StoryController as FrontendStoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
@@ -78,6 +80,10 @@ Route::get('/audit-reports',[FrontendReportController::class,'auditReports'])->n
 //newses
 Route::get('/chayatal-newses',[FrontendChayatalNewsController::class,'index']);
 Route::get('/single-news/{id}',[FrontendChayatalNewsController::class,'singleNews'])->name('single-news');
+//story
+Route::get('/success-stories',[FrontendStoryController::class,'index']);
+Route::get('/child-guardian-stories',[FrontendStoryController::class,'childStories']);
+Route::get('/single-story/{id}',[FrontendStoryController::class,'singleStory'])->name('single-story');
 
 Route::middleware(['auth','role:admin'])->group(function () {
 
@@ -186,6 +192,17 @@ Route::middleware(['auth','role:admin'])->group(function () {
             Route::get('/edit/{id}',[ReportController::class, 'edit'])->name('edit');
             Route::post('/update/{id}',[ReportController::class, 'update'])->name('update');
             Route::get('/delete/{id}',[ReportController::class, 'delete'])->name('delete');
+    
+        });
+
+        Route::group(['as'=>'story.','prefix'=>'story'],function(){
+    
+            Route::get('/',[StoryController::class, 'index'])->name('index');
+            Route::get('/create',[StoryController::class, 'create'])->name('create');
+            Route::post('/store',[StoryController::class, 'store'])->name('store');
+            Route::get('/edit/{id}',[StoryController::class, 'edit'])->name('edit');
+            Route::post('/update/{id}',[StoryController::class, 'update'])->name('update');
+            Route::get('/delete/{id}',[StoryController::class, 'delete'])->name('delete');
     
         });
 

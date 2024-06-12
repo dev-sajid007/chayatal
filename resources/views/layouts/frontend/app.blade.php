@@ -27,7 +27,7 @@
     <div class="page-wrapper">
 
         <!-- .preloader -->
-        {{-- <div class="preloader"></div> --}}
+        <div class="preloader"></div>
         <!-- /.preloader -->
 
         <!-- main header area -->
