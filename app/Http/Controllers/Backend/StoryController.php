@@ -83,4 +83,17 @@ class StoryController extends Controller
 
         return redirect()->route('admin.story.index')->with($notification);
     }
+
+    public function delete($id)
+    {
+        $story = Story::find($id);
+        $story->delete();
+        
+        $notification = array(
+            'message' => 'Story Delete Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.story.index')->with($notification);
+    }
 }
