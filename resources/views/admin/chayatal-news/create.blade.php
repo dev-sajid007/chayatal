@@ -17,10 +17,10 @@
 @endpush
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h3 class="mb-0 text-gray-800">Chayaal News</h3>
+        <h3 class="mb-0 text-gray-800">Chayatal News</h3>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./">Home</a></li>
-            <li class="breadcrumb-item">Chayaal News</li>
+            <li class="breadcrumb-item">Chayatal News</li>
             <li class="breadcrumb-item active" aria-current="page">Create</li>
         </ol>
     </div>
@@ -30,7 +30,7 @@
         <div class="col-lg-12">
             <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Create Chayaal News</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Create Chayatal News</h6>
                     <a href="{{ route('admin.chayatal-news.index') }}" class="btn btn-dark"><i
                             class="fa fa-arrow-left"></i> Back</a>
                 </div>
