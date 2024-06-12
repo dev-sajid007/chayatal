@@ -12,7 +12,7 @@
                     <div class="top-right clearfix">
                         <ul class="social-link">
                             <li>Follow Us On: </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/chayatalbd"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>

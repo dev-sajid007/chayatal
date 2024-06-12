@@ -187,7 +187,7 @@
                 @endforeach
             </div>
             <div class="gallery-btn">
-                <a href="gallery.html" class="btn-two">View All</a>
+                {{-- <a href="gallery.html" class="btn-two">View All</a> --}}
             </div>
         </div>
     </section>
