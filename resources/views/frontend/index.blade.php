@@ -326,7 +326,7 @@
                                 <div class="testimonials-autor">
                                     <figure><img src="{{ asset($testimonial->photo) }}" alt=""></figure>
                                     <div class="autor">{{ $testimonial->name }}</div>
-                                    <span>Donator</span>
+                                    <span>Well Wisher</span>
                                 </div>
                             </div>
                         @endforeach
