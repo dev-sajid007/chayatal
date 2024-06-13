@@ -31,4 +31,10 @@ class HomeController extends Controller
         //dd($data['menus']->toArray());
         return view('frontend.index',$data);
     }
+
+
+    public function getInvolved()
+    {
+        return view('frontend.page.get-involved');
+    }
 }

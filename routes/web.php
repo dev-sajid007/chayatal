@@ -90,6 +90,9 @@ Route::get('/single-story/{id}',[FrontendStoryController::class,'singleStory'])-
 //media
 Route::get('/media',[FrontendMediaController::class,'index']);
 
+//get involved
+Route::get('/get-involved',[HomeController::class,'getInvolved'])->name('get-involved');
+
 
 
 Route::middleware(['auth','role:admin'])->group(function () {
