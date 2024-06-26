@@ -34,6 +34,7 @@ use App\Http\Controllers\Frontend\PageContentController;
 use App\Http\Controllers\Frontend\ProjectController as FrontendProjectController;
 use App\Http\Controllers\Frontend\ReportController as FrontendReportController;
 use App\Http\Controllers\Frontend\StoryController as FrontendStoryController;
+use App\Http\Controllers\Frontend\VolunteerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Facades\Route;
@@ -92,7 +93,8 @@ Route::get('/media',[FrontendMediaController::class,'index']);
 
 //get involved
 Route::get('/get-involved',[HomeController::class,'getInvolved'])->name('get-involved');
-
+//be a volunteer
+Route::get('/be-a-volunteer',[VolunteerController::class,'index'])->name('be-a-volunteer');
 
 
 Route::middleware(['auth','role:admin'])->group(function () {

@@ -37,12 +37,14 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="{{route('be-a-volunteer')}}">
                     <div class="single-item one">
                         <div class="icon-box">
                             <i class="flaticon-box"></i>
                         </div>
                         <h4>Be a Volunteer</h4>
                     </div>
+                    </a>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="single-item one">
