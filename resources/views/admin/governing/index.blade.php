@@ -2,13 +2,11 @@
 
 @push('css')
     <link href="{{asset('backend/admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
-
     <style>
         .table td {
             vertical-align: middle;
         }
     </style>
-    
 @endpush
 
 @section('content')
@@ -47,7 +45,7 @@
                                 <td>
                                     <img src="{{asset($governing->photo)}}" class="img-thumbnail" style="width: 120px" alt="">
                                 </td>
-                                <td>{{$governing->name}}</td>
+                                <td ><p class="card-title-g">{{$governing->name}}</p></td>
                                 <td>{{$governing->designation}}</td>
                                 <td>
                                     <a href="{{route('admin.governing_body.edit',$governing->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>

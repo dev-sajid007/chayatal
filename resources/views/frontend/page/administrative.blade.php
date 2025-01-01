@@ -12,7 +12,7 @@
                                 <figure><img src="{{asset(@$data->photo)}}" alt=""></figure>
                             </div>
                             <div class="lower-content">
-                                <h4><a href="single-volunteer.html">{{@$data->name}}</a></h4>
+                                <h4 style="font-size: 14px!important">{{@$data->name}}</h4>
                                 <span>{{@$data->designation}}</span>
                             </div>
                         </div>
