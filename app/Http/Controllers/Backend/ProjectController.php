@@ -29,7 +29,7 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required|unique:news',
             'description' => 'required',
-            'photo' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'photo' => 'required|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         $project = new Project();
