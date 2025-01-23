@@ -29,7 +29,9 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required|unique:news',
             'description' => 'required',
-            'photo' => 'required|mimes:jpg,jpeg,png,webp|max:2048',
+            'photo' => 'required|mimes:jpg,jpeg,png|max:5000',
+            'thumbnail' => 'required|mimes:jpg,jpeg,png|max:5000',
+
         ]);
 
         $project = new Project();
@@ -37,10 +39,14 @@ class ProjectController extends Controller
         $project->description = $request->description;
         $project->type = $request->type;
         $project->photo = 'default.png';
+        $project->thumbnail = 'default.png';
         $project->save();
 
         if ($request->hasFile('photo')) {
             $this->uploadFileWithResize($request->file('photo'), $project, 'photo', 'project', 370, 250);
+        }
+        if ($request->hasFile('thumbnail')) {
+            $this->uploadFileWithResize($request->file('thumbnail'), $project, 'thumbnail', 'project', 1200, 400);
         }
 
         $notification = array(
