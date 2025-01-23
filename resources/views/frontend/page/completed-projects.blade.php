@@ -15,7 +15,7 @@
                 <div class="single-item">
                     <div class="img-box">
                         <div class="img-holder">
-                            <figure><a href="{{route('single-project',$project->id)}}"><img src="{{asset($project->photo)}}" alt=""></a></figure>
+                            <figure><a href="{{route('single-project',$project->id)}}"><img src="{{asset($project->thumbnail)}}" alt=""></a></figure>
                         </div>
                     </div>
                     <div class="news-content">

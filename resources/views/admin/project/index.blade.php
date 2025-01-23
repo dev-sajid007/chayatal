@@ -32,6 +32,7 @@
                     <thead >
                     <tr>
                         <th>#</th>
+                        <th width="10%">Thumbnail</th>
                         <th width="10%">Photo</th>
                         <th width="15%">Title</th>
                         <th>Description</th>
@@ -43,6 +44,9 @@
                         @foreach ($projects as $project)
                         <tr class="align-middle">
                          <td>{{$loop->iteration}}</td>
+                         <td>
+                             <img src="{{asset($project->thumbnail)}}" class="img-thumbnail" style="width: 120px" alt="">
+                         </td>
                          <td>
                              <img src="{{asset($project->photo)}}" class="img-thumbnail" style="width: 120px" alt="">
                          </td>

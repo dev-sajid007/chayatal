@@ -54,7 +54,8 @@
                                     </div>
                                     
                                     <div class="row col-12">
-                                        <div class="form-group col-12 col-md-6">
+
+                                        <div class="form-group col-12 col-md-12">
                                             <label for="">Content</label>
                                             <textarea  class="form-control @error('description') is-invalid @enderror" name="description" id="summernote" cols="30" rows="20"  value="">{{ $project->description ?? old('description') }}</textarea>
                                             @error('description')
@@ -64,6 +65,20 @@
                                             @enderror
                                         </div>
 
+                                      
+
+                                    </div>
+
+                                    <div class="row col-12">
+                                        <div class="form-group col-12 col-md-6">
+                                            <label for="thumbnail">Thumbnail</label>
+                                            <input type="file" class="form-control dropify @error('thumbnail') is-invalid @enderror" data-default-file="{{isset($project->thumbnail) ? asset($project->thumbnail) : ''}}"  name="thumbnail" data-height="235" />
+                                            @error('thumbnail')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
 
                                         <div class="form-group col-12 col-md-6">
                                             <label for="photo">Photo</label>
@@ -74,7 +89,6 @@
                                                 </span>
                                             @enderror
                                         </div>
-
                                     </div>
                                     
                                    
@@ -125,7 +139,7 @@
         $('#summernote').summernote({
             placeholder: 'Write Here .....',
             tabsize: 2,
-            height: 195
+            height: 350,
         });
     });
 </script>
